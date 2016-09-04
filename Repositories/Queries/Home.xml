@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table>
+  <SQLQuery>
+    <!-- Login screen -->
+    <SQlQuery_id>Home_01</SQlQuery_id>
+    <SQlQuery_data>
+
+    </SQlQuery_data>
+  </SQLQuery>
+</Table>
