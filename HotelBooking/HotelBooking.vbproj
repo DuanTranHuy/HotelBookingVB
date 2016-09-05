@@ -239,6 +239,7 @@
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
+    <Compile Include="Controllers\SignUpController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1376,6 +1377,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\Account\" />
+    <Folder Include="Views\SignUp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
