@@ -1,0 +1,199 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HotelBooking
+</name>
+</assembly>
+<members>
+<member name="M:HotelBooking.CommonInfo.GetPCName">
+ <summary>
+ Lấy PC Name của máy trạm
+ </summary>
+ <returns>PC Name của máy trạm</returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.mdfWks">
+ <summary>
+ Lấy địa chỉ IP của máy trạm
+ </summary>
+ <returns>Địa chỉ IP máy trạm</returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.ctdWks">
+ <summary>
+ Lấy địa chỉ IP của máy trạm
+ </summary>
+ <returns>Địa chỉ IP máy trạm</returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.mdfPgm(System.String)">
+ <summary>
+ Lấy tên của màn hình tương ứng
+ </summary>
+ <param name="FunctionCode">Mã của màn hình</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.ctdPgm(System.Object)">
+ <summary>
+ Lấy tên của màn hình tương ứng
+ </summary>
+ <param name="FunctionCode">Mã của màn hình</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.ctdUsr">
+ <summary>
+ Lấy ID người dùng
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.mdfUsr">
+ <summary>
+ Lấy ID người dùng
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.actFlg">
+ <summary>
+ Lấy giá trị Actual Flag
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.CommonInfo.IsValidEmailFormat(System.String)">
+ <summary>
+ Kiểm tra Email format
+ </summary>
+ <param name="s"></param>
+ <returns></returns>
+</member>
+<member name="M:HotelBooking.Logger.LogUserLogin(System.UInt64,System.String,System.String,System.String)">
+ <summary>
+ Lưu lại thông tin người dùng đăng nhập hệ thống
+ </summary>
+ <param name="UserID"></param>
+ <param name="SessionID"></param>
+ <param name="ComputerName"></param>
+ <param name="IpAdress"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogUserLogout(System.UInt64,System.String,System.String,System.String)">
+ <summary>
+ Lưu lại thông tin người dùng khi đăng xuất
+ </summary>
+ <param name="UserID"></param>
+ <param name="SessionID"></param>
+ <param name="ComputerName"></param>
+ <param name="IpAdress"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogUserActivity(System.UInt64,System.String,System.String,System.UInt64,System.String,System.String,System.String,System.String,System.String)">
+ <summary>
+ Lưu thông tin đặc biệt
+ </summary>
+ <param name="ctdUsr"></param>
+ <param name="ctdWks"></param>
+ <param name="ctdPgm"></param>
+ <param name="userId"></param>
+ <param name="userName"></param>
+ <param name="computerName"></param>
+ <param name="ipAdress"></param>
+ <param name="act"></param>
+ <param name="sql"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogVisitedScreen(System.UInt64,System.String,System.String,System.String)">
+ <summary>
+ Lưu thông tin người dùng truy cập màn hình
+ </summary>
+ <param name="userId"></param>
+ <param name="userName"></param>
+ <param name="screenCode"></param>
+ <param name="screenName"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogException(System.Exception)">
+ <summary>
+ Lưu thông tin lỗi của hệ thống
+ </summary>
+ <param name="ex"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogUserActivities(System.UInt64,System.String,System.String,System.UInt64,System.String,System.String,System.String,System.String,System.Collections.Generic.List{System.String})">
+ <summary>
+ Lưu lại các thao tác của user
+ </summary>
+ <param name="ctdUsr"></param>
+ <param name="ctdWks"></param>
+ <param name="ctdPgm"></param>
+ <param name="userId"></param>
+ <param name="userName"></param>
+ <param name="computerName"></param>
+ <param name="ipAdress"></param>
+ <param name="act"></param>
+ <param name="sqlList"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogSpecialOperation(System.String,System.String,System.String,System.String)">
+ <summary>
+ Ghi lại thao tác đặc biệt
+ </summary>
+ <param name="operation">Tên thao tác</param>
+ <param name="key">Dữ liệu chịu tác động</param>
+ <param name="author">Người thực hiện</param>
+ <param name="reason">Lý do</param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Util.GetMessageFromResource(System.String)">
+ <summary>
+ Lấy thông tin message từ cấu hình hệ thống
+ </summary>
+ <param name="messageId"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Controllers.LoginController.Login(System.String,System.String)">
+ <remarks></remarks>
+</member>
+<member name="T:HotelBooking.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.LOGIN_M001">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập tên đăng nhập.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.LOGIN_M002">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập mật khẩu.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.LOGIN_M003">
+<summary>
+  Looks up a localized string similar to Tài khoản không tồn tại.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.LOGIN_M004">
+<summary>
+  Looks up a localized string similar to Mật khẩu không đúng.
+</summary>
+</member>
+</members>
+</doc>

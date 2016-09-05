@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Repositories
+</name>
+</assembly>
+<members>
+<member name="T:Repositories.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Repositories.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Repositories.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Repositories.DB.Common.Constants.UserColumns">
+ <summary>
+ Enum for UserRepository
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:Repositories.DB.Common.XMLQueryReader.GetSqlQuery(System.String,System.String)">
+ <summary>
+ Get SQL Query From File XML
+ </summary>
+ <param name="id">ID SQL</param>
+ <returns>SQL Command</returns>
+</member>
+</members>
+</doc>

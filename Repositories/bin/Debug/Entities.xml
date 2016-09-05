@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Entities
+</name>
+</assembly>
+<members>
+<member name="T:Entities.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Entities.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Entities.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:Entities.Commons">
+ <summary>
+ Record for storing a client record in the common database
+ </summary>
+</member>
+<member name="T:Entities.IKeyedEntity`1">
+ <summary>
+ Interface defining any item we can store in a repository and can identify by 
+ an unique key
+ </summary>
+ <remarks>
+ This interface is typed so we can make type-safe code for retrieving the entity
+ (don't pass in an integer if the entity is keyed by string etc.)
+ </remarks>
+</member>
+<member name="P:Entities.IKeyedEntity`1.Id">
+ <summary>
+ Get the key to find the entity by
+ </summary>
+</member>
+<member name="T:Entities.Login">
+ <summary>
+ Record for storing a client record in the common database
+ </summary>
+</member>
+</members>
+</doc>
