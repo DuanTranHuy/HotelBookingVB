@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF87FFF6-32BF-493B-8377-0DFDEBF3CB06}</ProjectGuid>
+    <ProjectGuid>{877E9F81-B759-4FCB-B72A-066286C19B25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Repositories</RootNamespace>
     <AssemblyName>Repositories</AssemblyName>
@@ -96,7 +96,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
