@@ -69,6 +69,7 @@
     <Compile Include="ICommonRepository.vb" />
     <Compile Include="ILoginRepository.vb" />
     <Compile Include="IRepository.vb" />
+    <Compile Include="ISignUpRepository.vb" />
     <Compile Include="LoginRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -85,6 +86,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SignUpRepository.vb" />
     <Compile Include="XMLQueryReader.vb" />
   </ItemGroup>
   <ItemGroup>
