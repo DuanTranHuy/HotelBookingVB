@@ -144,13 +144,13 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="#">Khách sạn</a></li>
-                            <li><a href="#">Chuyến bay</a></li>
-                            <li><a href="#">Du lịch</a></li>
-                            <li><a href="#">Xe</a></li>
-                            <li><a href="#">Biển</a></li>
-                            <li><a href="#">Mới nhất</a></li>
-                            <li><a href="#">Khuyến mại</a></li>
+                            @*<li><a href="#">Khách sạn</a></li>
+                                <li><a href="#">Chuyến bay</a></li>
+                                <li><a href="#">Du lịch</a></li>
+                                <li><a href="#">Xe</a></li>
+                                <li><a href="#">Biển</a></li>
+                                <li><a href="#">Mới nhất</a></li>
+                                <li><a href="#">Khuyến mại</a></li>*@
                             @*<li class="dropdown">
                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hướng dẫn<b class="lightcaret mt-2"></b></a>
                                     <ul class="dropdown-menu">
@@ -159,7 +159,46 @@
                                         <li><a href="#">Sample Link 2</a></li>
                                     </ul>
                                 </li>*@
-                            <li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+                            @*<li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>*@
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Đăng nhập<span class="lightcaret mt-2"></span></a>
+                                <ul id="login-dp" class="dropdown-menu">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <b>Đăng nhập với</b>
+                                                <div class="social-buttons">
+                                                    <a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+                                                    <a href="#" class="btn btn-gg"><i class="fa fa-google"></i> Google</a>
+                                                </div>
+                                                <b>Hoặc</b>
+                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputEmail2"></label>
+                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Địa chỉ email" required>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="sr-only" for="exampleInputPassword2"></label>
+                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Mật khẩu" required>
+                                                        <div class="help-block text-right"><a href="">Bạn quên mật khẩu?</a></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                    </div>
+                                                    <div class="checkbox">
+                                                        <label>
+                                                            <input type="checkbox">Duy trì đăng nhập
+                                                        </label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="bottom text-center">
+                                                Bạn chưa có tài khoản? <a href="#"><b> Tạo mới</b></a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                     <!-- /Navigation-->
