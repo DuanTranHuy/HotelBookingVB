@@ -160,8 +160,12 @@
                                     </ul>
                                 </li>*@
                             @*<li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>*@
+<<<<<<< Updated upstream
                             <li>@Html.ActionLink("Error Screen", "ErrorScreen", "ErrorScreen", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
                             <li class="dropdown">
+=======
+                            <li class="dropdown" id="dropDownLogin">
+>>>>>>> Stashed changes
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Đăng nhập<span class="lightcaret mt-2"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
                                     <li>
@@ -173,18 +177,19 @@
                                                     <a href="#" class="btn btn-gg"><i class="fa fa-google"></i> Google</a>
                                                 </div>
                                                 <b>Hoặc</b>
-                                                <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
+                                                @Using (Html.BeginForm("Login", "Login"))
+                                                @<form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
                                                     <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputEmail2"></label>
-                                                        <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Địa chỉ email" required>
+                                                        <input type="text" class="form-control" id="txtUserName" placeholder="Tên đăng nhập/Email">
+                                                        <label id="lbl_username_fail" class="label-error"></label>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label class="sr-only" for="exampleInputPassword2"></label>
-                                                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Mật khẩu" required>
+                                                        <input type="password" class="form-control" id="txtPassword" placeholder="Mật khẩu">
+                                                        <label id="lbl_password_fail" class="label-error"></label>
                                                         <div class="help-block text-right"><a href="">Bạn quên mật khẩu?</a></div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                        <button type="submit" class="btn btn-primary btn-block" id="btnLogin" onclick="errorMessage()">Đăng nhập</button>
                                                     </div>
                                                     <div class="checkbox">
                                                         <label>
@@ -192,6 +197,7 @@
                                                         </label>
                                                     </div>
                                                 </form>
+                                                End Using
                                             </div>
                                             <div class="bottom text-center">
                                                 Bạn chưa có tài khoản? <a href="#"><b> Tạo mới</b></a>
@@ -265,7 +271,7 @@
                 <span class="ftitle">Góp ý</span>
                 <div class="relative">
                     <input type="email" class="form-control fccustom2" id="exampleInputEmail1" placeholder="Nhập địa chỉ mail của bạn">
-                    <button type="submit" class="btn btn-default btncustom">Submit<img src="~/Content/HBThemes/images/arrow.png" alt="" /></button>
+                    <button type="submit" class="btn btn-default btncustom" id="btnSubmit">Submit<img src="~/Content/HBThemes/images/arrow.png" alt="" /></button>
                 </div>
                 <br /><br />
                 <span class="ftitle">Hỗ trợ khách hàng</span><br />
@@ -317,8 +323,100 @@
 
     <!-- Custom Select -->
     <script type='text/javascript' src='~/Content/HBThemes/assets/js/jquery.customSelect.js'></script>
-
+    <!-- Javascript  -->
+    <script src="~/Content/HBThemes/assets/js/jquery.easing.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="~/Content/HBThemes/dist/js/bootstrap.min.js"></script>
+
+    @Section Scripts
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#dropDownLogin').hide(0);
+            //$('#dropDownLogin').click(function () {
+            //    $('#dropDownLogin').hide(0);
+            //    $(this).find("#dropDownLogin").show(0);
+            //});
+            //$('#dropDownLogin').click(function (e) {
+            //    $('#dropDownLogin').hide(0);
+            //    $(this).find("#dropDownLogin").show(0);
+            //    e.stopPropagation();
+            //})
+              $(document).keypress(function (event) {
+                  var keycode = (event.keyCode ? event.keyCode : event.which);
+                  if (keycode == '13') {
+                      if (Validate()) {
+                          ViewBag.Title = "Login";
+                          Login();
+                      } else {
+                          return false;
+                      }
+                  }
+              });
+
+              $('#btnLogin').click(function () {
+                  if (Validate()) {
+                      ViewBag.Title = "Login";
+                      Login();
+                  } else {
+                      return false;
+                  }
+              });
+              $('#btnSubmit').click(function () {
+                  window.location.href = "@Url.Action("Login", "Login")";
+              });
+              function Validate() {
+                  var username = $('#txtUsername').val();
+                  var password = $('#txtPassword').val();
+                  $('#lbl_username_fail').text("");
+                  $('#lbl_password_fail').text("");
+                  if (username == "") {
+                      $('.login-wrap').animo({ animation: 'tada' });
+                      $('#lbl_username_fail').text("Vui lòng nhập tên đăng nhập");
+                      $('#txtUsername').focus();
+                      return false;
+                  } else if (password == "") {
+                      $('.login-wrap').animo({ animation: 'tada' });
+                      $('#errorMessage').text("");
+                      $('#lbl_password_fail').text("Vui lòng nhập mật khẩu");
+                      $('#txtPassword').focus();
+                      return false;
+                  }
+                  return true;
+              }
+              function Login() {
+                  var username = $('#txtUsername').val();
+                  var password = $('#txtPassword').val();
+                  $('#lbl_username_fail').text("");
+                  $('#lbl_password_fail').text("");
+                  $.ajax({
+                      type: "POST",
+                      url: "@Url.Action("Login","Login")",
+                      data: {
+                      username: username,
+                      password: password
+                      },
+                  dataType: "Json",
+                  success: function (res) {
+                      switch (res.Status) {
+                          case 1:
+                              $('#lbl_username_fail').text(res.Message);
+                              $('#txtUsername').focus();
+                              break;
+                          case 2:
+                              $('#lbl_password_fail').text(res.Message);
+                              $('#txtPassword').focus();
+                              break;
+                          case 0:
+                              window.location.href = res.RedirectTo;
+                              break;
+                      }
+                  }
+              })
+          }
+          });
+         
+    </script>
+    End Section
+    @RenderSection("Scripts", required:=False)    
 </body>
 </html>
