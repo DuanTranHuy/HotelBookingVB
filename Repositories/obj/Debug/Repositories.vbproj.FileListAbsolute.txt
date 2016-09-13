@@ -11,3 +11,16 @@ D:\HotelBooking\HotelBooking\Repositories\bin\Debug\Entities.pdb
 D:\HotelBooking\HotelBooking\Repositories\bin\Debug\Entities.xml
 D:\HotelBooking\HotelBooking\Repositories\obj\Debug\Repositories.dll
 D:\HotelBooking\HotelBooking\Repositories\obj\Debug\Repositories.pdb
+D:\HotelBooking\Repositories\bin\Debug\Repositories.dll.config
+D:\HotelBooking\Repositories\bin\Debug\Repositories.dll
+D:\HotelBooking\Repositories\bin\Debug\Repositories.pdb
+D:\HotelBooking\Repositories\bin\Debug\Repositories.xml
+D:\HotelBooking\Repositories\bin\Debug\Entities.dll
+D:\HotelBooking\Repositories\bin\Debug\Entities.pdb
+D:\HotelBooking\Repositories\bin\Debug\Entities.xml
+D:\HotelBooking\Repositories\obj\Debug\Repositories.vbprojResolveAssemblyReference.cache
+D:\HotelBooking\Repositories\obj\Debug\Repositories.Resources.resources
+D:\HotelBooking\Repositories\obj\Debug\Repositories.vbproj.GenerateResource.Cache
+D:\HotelBooking\Repositories\obj\Debug\Repositories.dll
+D:\HotelBooking\Repositories\obj\Debug\Repositories.xml
+D:\HotelBooking\Repositories\obj\Debug\Repositories.pdb

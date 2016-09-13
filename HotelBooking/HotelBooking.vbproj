@@ -236,6 +236,7 @@
     <Compile Include="Common\StatusObjForJsonResult.vb" />
     <Compile Include="Common\Util.vb" />
     <Compile Include="Controllers\AccountController.vb" />
+    <Compile Include="Controllers\ErrorScreenController.vb" />
     <Compile Include="Controllers\HomeController.vb" />
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
@@ -1344,6 +1345,7 @@
     <Content Include="Views\Home\Home.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
     <Content Include="Views\SignUp\SignUp.vbhtml" />
+    <Content Include="Views\ErrorScreen\ErrorScreen.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />

@@ -30,7 +30,7 @@ End Code
                         Xin lỗi, đã có lỗi xảy ra trong quá trình thực hiện yêu cầu của bạn.
                     </div>
                     <div class="media">
-                        <a href="https://www.facebook.com/nhungnhat129" class="btn btn-primary btn-lg">
+                        <a href="@Url.Action("Home", "Home")"class="btn btn-primary btn-lg">
                             <span class="glyphicon glyphicon-home"></span>
                             Quay về trang chủ
                         </a>

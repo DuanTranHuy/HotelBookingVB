@@ -160,12 +160,11 @@
                                     </ul>
                                 </li>*@
                             @*<li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>*@
-<<<<<<< Updated upstream
                             <li>@Html.ActionLink("Error Screen", "ErrorScreen", "ErrorScreen", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
                             <li class="dropdown">
-=======
+
                             <li class="dropdown" id="dropDownLogin">
->>>>>>> Stashed changes
+
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Đăng nhập<span class="lightcaret mt-2"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
                                     <li>
