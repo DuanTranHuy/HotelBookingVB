@@ -12,7 +12,7 @@
     Public Class CommonsTitleName
 
         Public Const Login As String = "SYS010 - Login"
-
+        Public Const SignUp As String = "SYS011 - SignUp"
 
     End Class
 
@@ -28,6 +28,7 @@
     'ID màn hình
     Public Class ScreenId
         Public Const Login As String = "Login"
+        Public Const SignUp As String = "SignUp"
         
     End Class
     'ID màn hình
@@ -35,7 +36,8 @@
     'Tên màn hình
     Public Class ScreenName
         Public Const Login As String = "Login"
-
+        Public Const SignUp As String = "SignUp"
+        
     End Class
     'Tên màn hình
 
@@ -69,7 +71,14 @@
     Public Const LoginM002 = "LOGIN_M002"
     Public Const LoginM003 = "LOGIN_M003"
     Public Const LoginM004 = "LOGIN_M004"
-
+     'Message cho màn hình SignUp.
+    Public Const SignUpM001 = "SIGNUP_M001"
+    Public Const SignUpM002 = "SIGNUP_M002"
+    Public Const SignUpM003 = "SIGNUP_M003"
+    Public Const SignUpM004 = "SIGNUP_M004"
+    Public Const SignUpM005 = "SIGNUP_M005"
+    Public Const SignUpM006 = "SIGNUP_M006"
+    Public Const SignUpM007 = "SIGNUP_M007"
     'Kết thúc phần message cho màn hình SYS011, SYS012, SYS013, SYS014.
 
 

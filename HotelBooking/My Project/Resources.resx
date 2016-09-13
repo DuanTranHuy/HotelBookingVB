@@ -129,4 +129,25 @@
   <data name="LOGIN_M004" xml:space="preserve">
     <value>Mật khẩu không đúng</value>
   </data>
+  <data name="SIGNUP_M001" xml:space="preserve">
+    <value>Vui lòng nhập tên đăng nhập</value>
+  </data>
+  <data name="SIGNUP_M002" xml:space="preserve">
+    <value>Vui lòng nhập địa chỉ Email</value>
+  </data>
+  <data name="SIGNUP_M003" xml:space="preserve">
+    <value>Vui lòng nhập lại địa chỉ Email</value>
+  </data>
+  <data name="SIGNUP_M004" xml:space="preserve">
+    <value>Vui lòng nhập mật khẩu</value>
+  </data>
+  <data name="SIGNUP_M005" xml:space="preserve">
+    <value>Vui lòng nhập lại mật khẩu</value>
+  </data>
+  <data name="SIGNUP_M006" xml:space="preserve">
+    <value>Tên đăng nhập đã tồn tại</value>
+  </data>
+  <data name="SIGNUP_M007" xml:space="preserve">
+    <value>Địa chỉ Email đã tồn tại</value>
+  </data>
 </root>

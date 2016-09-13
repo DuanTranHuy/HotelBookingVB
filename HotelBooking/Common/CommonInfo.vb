@@ -59,10 +59,15 @@ Public Class CommonInfo
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Shared Function mdfPgm(ByVal FunctionCode As String) As String
-        Dim functionId As String = FunctionCode.ToUpper()
+        Dim functionId As String = FunctionCode
         Select Case functionId
             Case ConstantsForCommon.ScreenId.Login
                 Return ConstantsForCommon.CommonsTitleName.Login
+
+        End Select
+        Select Case functionId
+            Case ConstantsForCommon.ScreenId.SignUp
+                Return ConstantsForCommon.CommonsTitleName.SignUp
 
         End Select
         Return String.Empty

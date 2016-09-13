@@ -95,5 +95,68 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LOGIN_M004", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vui lòng nhập tên đăng nhập.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M001() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M001", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vui lòng nhập địa chỉ Email.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M002() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M002", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vui lòng nhập lại địa chỉ Email.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M003() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M003", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vui lòng nhập mật khẩu.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M004() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M004", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Vui lòng nhập lại mật khẩu.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M005() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M005", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tên đăng nhập đã tồn tại.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M006() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M006", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Địa chỉ Email đã tồn tại.
+        '''</summary>
+        Friend ReadOnly Property SIGNUP_M007() As String
+            Get
+                Return ResourceManager.GetString("SIGNUP_M007", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

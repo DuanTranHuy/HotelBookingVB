@@ -94,6 +94,11 @@
             Public Const Login_01 As String = "Login_01"
             Public Const Login As String = "Login"
         End Class
+        Public Class SignUp
+            Public Const SignUp As String = "SignUp"
+            Public Const SignUp_01 As String = "SignUp_01"
+            Public Const SignUp_02 As String = "SignUp_02"
+        End Class
 
     End Class
 
