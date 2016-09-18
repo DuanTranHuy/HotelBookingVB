@@ -7246,3 +7246,7 @@ td.visible-print {
     font-size: 12px;
     color: red;
 }
+.input-tp {
+    background: transparent;
+    border-color: gray;
+}

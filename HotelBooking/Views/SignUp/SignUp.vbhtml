@@ -14,64 +14,67 @@ End Code
     <link src="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" /> 
     <link src="~/Content/HBThemes/css/app/app.css" rel="stylesheet" />
     <script src="~/Content/HBThemes/assets/js/jquery.v2.0.3.js"></script>
+    <style>
+        body {
+            background-image: url('/Content/HBThemes/images/sign-up-background.jpg');
+        }
+    </style>
+
 </head>
 <body>
 
         <div class="container">
-            <div class="row main">
-                <div class="main-login main-center">
-                    <img src="~/Content/HBThemes/images/logo2.png" class="login-img" alt="logo" /><br />
-                    <h1 class="text-display-1">Tạo tài khoản</h1>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="text-center" style="margin-top: 1cm">
+                            <img src="~/Content/HBThemes/images/logo2.png" class="login-img" alt="logo" /><br />
+                        </div>
+                        <h1 class="text-display-1 text-center" style="color: lavender">Tạo tài khoản</h1>
                         <!-- Signup -->
-                            <div class="form-group">
-                                <div class="form-control-material">
-                                    <input id="txtUserName" type="text" class="form-control" placeholder="">
-                                    <label for="firstName">Tên đăng nhập</label>
-                                </div>
+                        <div class="form-group">
+                            <div class="form-control-material">
+                                <input id="txtUserName" type="text" class="form-control input-tp" placeholder="Tên đăng nhập">
                             </div>
                             <label id="lblUserNameFail" class="label-error"></label>
-                            <div class="form-group">
-                                <div class="form-control-material">
-                                    <input id="txtEmail" type="text" class="form-control" placeholder="">
-                                    <label for="lastName">Địa chỉ Email</label>
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control-material">
+                                <input id="txtEmail" type="text" class="form-control input-tp" placeholder="Địa chỉ Email">
                             </div>
                             <label id="lblEmailFail" class="label-error"></label>
-                            <div class="form-group">
-                                <div class="form-control-material">
-                                    <input id="txtConfirmEmail" type="text" class="form-control" placeholder="">
-                                    <label for="email">Nhập lại địa chỉ Email</label>                                    
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control-material">
+                                <input id="txtConfirmEmail" type="text" class="form-control input-tp" placeholder="Nhập lại địa chỉ Email">
                             </div>
                             <label id="lblConfirmEmailFail" class="label-error"></label>
-                            <div class="form-group">
-                                <div class="form-control-material">
-                                    <input id="txtPassword" type="password" class="form-control" placeholder="">
-                                    <label for="password">Mật khẩu</label>                                  
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control-material">
+                                <input id="txtPassword" type="password" class="form-control input-tp" placeholder="Mật khẩu">
                             </div>
                             <label id="lblPasswordFail" class="label-error"></label>
-                            <div class="form-group">
-                                <div class="form-control-material">
-                                    <input id="txtConfirmPassword" type="password" class="form-control" placeholder="">
-                                    <label for="confirmPassword">Nhập lại mật khẩu</label>                                  
-                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-control-material">
+                                <input id="txtConfirmPassword" type="password" class="form-control input-tp" placeholder="Nhập lại mật khẩu">
                             </div>
                             <label id="lblConfirmPasswordFail" class="label-error"></label>
-                            <div class="form-group text-center">
-                                <div class="checkbox">
-                                    <input type="checkbox" id="agree"/>
-                                    <label for="agree">* Tôi đồng ý với các <a href="#">Điều khoản &amp; Điều kiện!</a></label>
-                                </div>
-                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="text-center">
-                                <button class="btn btn-primary" type="submit" id="btnSignUp">Đăng kí ngay</button>                      
+                                <label style="color: darkgray; font-size: 11.5px">* Chọn đăng ký là bạn đã đồng ý với các <a style="color: indianred" href="#">Điều khoản dịch vụ</a> của chúng tôi.</label>
                             </div>
-                            <div class="form-group">
-                                <label>Hoặc đăng kí nhanh với</label>
-                                <button id="btnFacebook" class="social1b"><img src="~/Content/HBThemes/images/icon-facebook.png" alt="" /></button>
-                                <a href="#" class="social3b"><img src="~/Content/HBThemes/images/icon-gplus.png" alt="" /></a>
-                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="submit" id="btnSignUp" style="width:300px">Đăng kí ngay</button>
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label style="color: lavender">Hoặc đăng kí nhanh với</label>
+                            <a href="#" class="social1b"><img src="~/Content/HBThemes/images/facebook.png" alt="" /></a>
+                            <a href="#" class="social3b"><img src="~/Content/HBThemes/images/google-plus.png" alt="" /></a>
+                        </div>
                         <!-- End Signup -->
                     </div>
                 </div>

@@ -716,6 +716,7 @@
     <Content Include="Content\HBThemes\images\egypt-thumb.jpg" />
     <Content Include="Content\HBThemes\images\egypt.jpg" />
     <Content Include="Content\HBThemes\images\error-screen.png" />
+    <Content Include="Content\HBThemes\images\facebook.png" />
     <Content Include="Content\HBThemes\images\fav-book-icons.png" />
     <Content Include="Content\HBThemes\images\fav-book-icons.psd" />
     <Content Include="Content\HBThemes\images\filter-rating-1.png" />
@@ -727,6 +728,7 @@
     <Content Include="Content\HBThemes\images\girl-cruise.png" />
     <Content Include="Content\HBThemes\images\girl.png" />
     <Content Include="Content\HBThemes\images\girl2.png" />
+    <Content Include="Content\HBThemes\images\google-plus.png" />
     <Content Include="Content\HBThemes\images\grid-icon.png" />
     <Content Include="Content\HBThemes\images\grid-icon.psd" />
     <Content Include="Content\HBThemes\images\home-icon.png" />
@@ -791,6 +793,7 @@
     <Content Include="Content\HBThemes\images\select-over.png" />
     <Content Include="Content\HBThemes\images\select.png" />
     <Content Include="Content\HBThemes\images\select.psd" />
+    <Content Include="Content\HBThemes\images\sign-up-background.jpg" />
     <Content Include="Content\HBThemes\images\slide phong 1.jpg" />
     <Content Include="Content\HBThemes\images\slide phong 2.jpg" />
     <Content Include="Content\HBThemes\images\slider\bahamas.jpg" />
