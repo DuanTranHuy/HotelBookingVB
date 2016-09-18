@@ -71,6 +71,20 @@ HotelBooking
  <param name="s"></param>
  <returns></returns>
 </member>
+<member name="M:HotelBooking.CommonInfo.EncryptData(System.String)">
+ <summary>
+ Mã hóa MD5
+ </summary>
+ <param name="data"></param>
+ <returns></returns>
+</member>
+<member name="M:HotelBooking.Header.GetWelcomeMessage">
+ <summary>
+ Lấy giá trị cho lời chào hệ thống
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
 <member name="M:HotelBooking.Logger.LogUserLogin(System.UInt64,System.String,System.String,System.String)">
  <summary>
  Lưu lại thông tin người dùng đăng nhập hệ thống
@@ -84,6 +98,16 @@ HotelBooking
 <member name="M:HotelBooking.Logger.LogUserLogout(System.UInt64,System.String,System.String,System.String)">
  <summary>
  Lưu lại thông tin người dùng khi đăng xuất
+ </summary>
+ <param name="UserID"></param>
+ <param name="SessionID"></param>
+ <param name="ComputerName"></param>
+ <param name="IpAdress"></param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Logger.LogUserLogoutOnSessionEnd(System.UInt64,System.String,System.String,System.String)">
+ <summary>
+ Lưu lại thông tin người dùng khi đăng xuất (trong trường hợp bị ngắt kết nối)
  </summary>
  <param name="UserID"></param>
  <param name="SessionID"></param>
@@ -156,7 +180,24 @@ HotelBooking
  <returns></returns>
  <remarks></remarks>
 </member>
-<member name="M:HotelBooking.Controllers.LoginController.Login(System.String,System.String)">
+<member name="M:HotelBooking.Util.RemoveSessionHbs(System.Boolean)">
+ <summary>
+ Xóa session của hệ thống
+ </summary>
+ <param name="RemoveSessionLogOut">Tham số khi xóa các session đăng xuất hệ thống</param>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Controllers.SignUpController.SignUp(System.String,System.String,System.String,System.String,System.String)">
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.LoginController.Login(System.String,System.String)">
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.LoginController.LogOut">
+ <summary>
+ Log out
+ </summary>
+ <returns></returns>
  <remarks></remarks>
 </member>
 <member name="T:HotelBooking.My.Resources.Resources">
@@ -173,6 +214,11 @@ HotelBooking
 <summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.LAYOUT_M001">
+<summary>
+  Looks up a localized string similar to Welcome : {0}.
 </summary>
 </member>
 <member name="P:HotelBooking.My.Resources.Resources.LOGIN_M001">
@@ -193,6 +239,56 @@ HotelBooking
 <member name="P:HotelBooking.My.Resources.Resources.LOGIN_M004">
 <summary>
   Looks up a localized string similar to Mật khẩu không đúng.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M001">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập tên đăng nhập.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M002">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập địa chỉ Email.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M003">
+<summary>
+  Looks up a localized string similar to Địa chỉ Email không đúng định dạng.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M004">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập lại địa chỉ Email.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M005">
+<summary>
+  Looks up a localized string similar to Xác nhận địa chỉ email không giống với email.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M006">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập mật khẩu.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M007">
+<summary>
+  Looks up a localized string similar to Vui lòng nhập lại mật khẩu.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M008">
+<summary>
+  Looks up a localized string similar to Xác nhận mật khẩu không trùng với mật khẩu.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M009">
+<summary>
+  Looks up a localized string similar to Tên đăng nhập đã tồn tại.
+</summary>
+</member>
+<member name="P:HotelBooking.My.Resources.Resources.SIGNUP_M010">
+<summary>
+  Looks up a localized string similar to Email đăng kí đã tồn tại.
 </summary>
 </member>
 </members>

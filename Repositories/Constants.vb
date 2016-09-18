@@ -51,9 +51,8 @@
         Public Enum UserColumns            
             ExpFlg = 0
             UserId = 1
-            FullName = 2
-            Email = 3
-            Password = 4
+            Email = 2
+            Password = 3
         End Enum
 
         Public Enum UserCountColumns
@@ -90,6 +89,10 @@
         End Enum
 
         Public Const DateTimeFormatForDisplay = "dd/MM/yyyy HH:mm"
+                Public Class Common
+            Public Const CMN_001 As String = "CMN_001"
+            Public Const COMMON As String = "COMMON"
+        End Class
         Public Class Login
             Public Const Login_01 As String = "Login_01"
             Public Const Login As String = "Login"
@@ -98,6 +101,7 @@
             Public Const SignUp As String = "SignUp"
             Public Const SignUp_01 As String = "SignUp_01"
             Public Const SignUp_02 As String = "SignUp_02"
+            Public Const SignUp_03 As String = "SignUp_03"
         End Class
 
     End Class

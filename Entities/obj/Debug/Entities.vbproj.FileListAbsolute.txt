@@ -7,3 +7,12 @@ D:\HotelBooking\HotelBooking\Entities\obj\Debug\Entities.dll
 D:\HotelBooking\HotelBooking\Entities\obj\Debug\Entities.xml
 D:\HotelBooking\HotelBooking\Entities\obj\Debug\Entities.pdb
 D:\HotelBooking\HotelBooking\Entities\obj\Debug\Entities.vbprojResolveAssemblyReference.cache
+D:\HotelBooking\Entities\bin\Debug\Entities.dll
+D:\HotelBooking\Entities\bin\Debug\Entities.pdb
+D:\HotelBooking\Entities\bin\Debug\Entities.xml
+D:\HotelBooking\Entities\obj\Debug\Entities.Resources.resources
+D:\HotelBooking\Entities\obj\Debug\Entities.vbproj.GenerateResource.Cache
+D:\HotelBooking\Entities\obj\Debug\Entities.dll
+D:\HotelBooking\Entities\obj\Debug\Entities.xml
+D:\HotelBooking\Entities\obj\Debug\Entities.pdb
+D:\HotelBooking\Entities\obj\Debug\Entities.vbprojResolveAssemblyReference.cache

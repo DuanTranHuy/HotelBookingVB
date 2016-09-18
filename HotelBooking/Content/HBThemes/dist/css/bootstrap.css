@@ -7242,3 +7242,7 @@ td.visible-print {
         border-top:0 none;
     }
 }
+.label-error {
+    font-size: 12px;
+    color: red;
+}

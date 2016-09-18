@@ -11,4 +11,6 @@ Public NotInheritable Class SignUp
     Public Property UserName() As String
     Public Property Email() As String
     Public Property Password() As String
+    Public Property IsExistAccount() As Boolean 
+    Public Property IsExistEmail() As Boolean 
 End Class

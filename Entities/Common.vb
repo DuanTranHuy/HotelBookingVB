@@ -15,4 +15,5 @@ Public NotInheritable Class Commons
     Public Property DFlg() As String
     Public Property Email() As String
 
+    Public Property SessionId() As String
 End Class

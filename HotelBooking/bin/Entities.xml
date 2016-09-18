@@ -47,5 +47,10 @@ Entities
  Record for storing a client record in the common database
  </summary>
 </member>
+<member name="T:Entities.SignUp">
+ <summary>
+ Record for storing a client record in the common database
+ </summary>
+</member>
 </members>
 </doc>

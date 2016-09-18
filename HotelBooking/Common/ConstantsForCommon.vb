@@ -8,7 +8,8 @@
     Public Const RemoteHost As String = "REMOTE_HOST"
     Public Const HttpXForward As String = "HTTP_X_FORWARDED_FOR"
     Public Const RemoteAddr As String = "REMOTE_ADDR"
-    Public Const RegexEmail AS String ="^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+    Public Const WelcomeMessage As String = "WELCOME"
+    Public Const RegexEmail As String = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
     Public Class CommonsTitleName
 
         Public Const Login As String = "SYS010 - Login"
@@ -29,27 +30,33 @@
     Public Class ScreenId
         Public Const Login As String = "Login"
         Public Const SignUp As String = "SignUp"
-        
+
     End Class
     'ID màn hình
 
     'Tên màn hình
     Public Class ScreenName
+        Public Const Home As String = "Home"
         Public Const Login As String = "Login"
         Public Const SignUp As String = "SignUp"
-        
+
+
     End Class
     'Tên màn hình
 
     'Tham số đầu vào 
     Public Class ErrorParam
-        Public Const SystemErrors As String = "SystemError"
-        Public Const Errors As String = "Error"
+        Public Const SystemErrors As String = "ErrorScreen"
+        Public Const Errors As String = "ErrorScreen"
     End Class
     Public Class LogParam
         Public Const Logout As String = "Logout"
         Public Const Login As String = "Login"
     End Class
+    Public Class HomeParam
+        Public Const Home As String = "Home"
+    End Class
+
     Public Class SessionParam
         Public Const SessionUserName As String = "USERNAME"
         Public Const SessionUserPass As String = "USERPASS"
@@ -57,6 +64,8 @@
         Public Const SessionUserId As String = "USERID"
         Public Const SessionFullName As String = "FULLNAME"
         Public Const SessionExpFlg As String = "EXP_FLG"
+        Public Const Link As String = "LINK"
+        Public Const SessionAccessToken As String = "ACCESSTOKEN"
         Public Const SessionAddOrDeleteRow As String = "ADD_OR_DELETEROW"
         Public Const SessionDeleteAll As String = "DELETE_ALL"
         Public Const SessionPathFileImportPart As String = "PATH_FILE_IMPORT_PART"
@@ -71,7 +80,7 @@
     Public Const LoginM002 = "LOGIN_M002"
     Public Const LoginM003 = "LOGIN_M003"
     Public Const LoginM004 = "LOGIN_M004"
-     'Message cho màn hình SignUp.
+    'Message cho màn hình SignUp.
     Public Const SignUpM001 = "SIGNUP_M001"
     Public Const SignUpM002 = "SIGNUP_M002"
     Public Const SignUpM003 = "SIGNUP_M003"
@@ -79,6 +88,9 @@
     Public Const SignUpM005 = "SIGNUP_M005"
     Public Const SignUpM006 = "SIGNUP_M006"
     Public Const SignUpM007 = "SIGNUP_M007"
+    Public Const SignUpM008 = "SIGNUP_M008"
+    Public Const SignUpM009 = "SIGNUP_M009"
+    Public Const SignUpM010 = "SIGNUP_M010"
     'Kết thúc phần message cho màn hình SYS011, SYS012, SYS013, SYS014.
 
 

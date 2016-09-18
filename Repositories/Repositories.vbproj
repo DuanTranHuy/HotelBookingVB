@@ -119,8 +119,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Queries\COMMON.xml" />
     <Content Include="Queries\Home.xml" />
     <Content Include="Queries\Login.xml" />
+    <Content Include="Queries\SignUp.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

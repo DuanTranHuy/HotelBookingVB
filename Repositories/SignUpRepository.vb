@@ -1,10 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports Entities
+Imports Microsoft.VisualBasic.ApplicationServices
 Imports Repositories.DB.Common
 
 Public Class SignUpRepository
     Implements ISignUpRepository
-    ReadOnly _connection As New SqlConnection(My.Settings.ConnectionString)
+    ReadOnly _conn As New SqlConnection(My.Settings.ConnectionString)
     Public Class Parameters
         Public Class SignUp
             Public Const AcceptFlag As String = "@AcceptFlag"
@@ -26,12 +27,12 @@ Public Class SignUpRepository
         Dim sqlCommand As SqlCommand = New SqlCommand()
 
         Try
-            sqlCommand.Connection = _connection
+            sqlCommand.Connection = _conn
             sqlCommand.CommandText = sqlQuery
             sqlCommand.CommandType = CommandType.Text
 
-            If _connection.State = ConnectionState.Closed Then
-                _connection.Open()
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
             End If
 
             Dim paraAcceptFlag As SqlParameter
@@ -93,46 +94,77 @@ Public Class SignUpRepository
             retval = False
             Throw
         Finally
-            _connection.Close()
+            _conn.Close()
         End Try
         Return retval
     End Function
 
-        Public Function CheckExistAccount(ByVal userName As String) As Boolean Implements ISignUpRepository.CheckExistAccount
-        Dim retval As Boolean = False
+    Public Function CheckExistAccount(ByVal userName As String) As Integer Implements ISignUpRepository.CheckExistAccount
         Dim xmlReader As New XMLQueryReader
         Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.SignUp.SignUp_02, Constants.SignUp.SignUp)
-        Dim sqlCommand As SqlCommand = New SqlCommand()
-
+        Dim cmd As SqlCommand = New SqlCommand()
+        Dim count As Integer
         Try
-            sqlCommand.Connection = _connection
-            sqlCommand.CommandText = sqlQuery
-            sqlCommand.CommandType = CommandType.Text
+            cmd.Connection = _conn
+            cmd.CommandText = sqlQuery
+            cmd.CommandType = CommandType.Text
 
-            If _connection.State = ConnectionState.Closed Then
-                _connection.Open()
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
             End If
 
             Dim pUsername As SqlParameter
             pUsername = New SqlParameter()
             pUsername.Direction = ParameterDirection.Input
-            pUsername.SqlDbType = SqlDbType.Varchar
+            pUsername.SqlDbType = SqlDbType.VarChar
             pUsername.ParameterName = Parameters.SignUp.UserName
             pUsername.Value = userName
-            sqlCommand.Parameters.Add(pUsername)
+            cmd.Parameters.Add(pUsername)
 
-            Dim result As Integer = sqlCommand.ExecuteNonQuery()
-            If (result = 0) Then
-                retval = False
-            Else
-                retval = True
-            End If
-        Catch exception As Exception
-            retval = False
-            Throw
-        Finally
-            _connection.Close()
+            count = cmd.ExecuteScalar()
+
+
+        Catch ex As Exception
+            _conn.Close()
+            Throw ex
+
+
         End Try
-        Return retval
+        Return count
+    End Function
+
+    Public Function CheckExistEmail(ByVal email As String) As Integer Implements ISignUpRepository.CheckExistEmail
+        Dim count As Integer
+        Dim xmlReader As New XMLQueryReader
+        Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.SignUp.SignUp_03, Constants.SignUp.SignUp)
+        Dim sqlCommand As SqlCommand = New SqlCommand()
+        Dim dr As SqlDataReader = Nothing
+        Try
+            sqlCommand.Connection = _conn
+            sqlCommand.CommandText = sqlQuery
+            sqlCommand.CommandType = CommandType.Text
+
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
+            End If
+
+            Dim pEmail As SqlParameter
+            pEmail = New SqlParameter()
+            pEmail.Direction = ParameterDirection.Input
+            pEmail.SqlDbType = SqlDbType.VarChar
+            pEmail.ParameterName = Parameters.SignUp.Email
+            pEmail.Value = email
+            sqlCommand.Parameters.Add(pEmail)
+
+            count = sqlCommand.ExecuteScalar()
+
+
+        Catch ex As Exception
+            _conn.Close()
+            Throw ex
+
+
+        End Try
+        Return count
     End Function
 End Class

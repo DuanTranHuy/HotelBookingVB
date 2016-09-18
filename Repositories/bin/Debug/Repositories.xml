@@ -22,6 +22,16 @@ Repositories
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:Repositories.CommonRepository.LogUserLogoutOnSessionEnd(System.UInt64,System.String,System.String,System.String)">
+ <summary>
+ Ghi thông tin người dùng đăng xuất khỏi hệ thống khi có sự cố
+ </summary>
+ <param name="userId">Id người dùng</param>
+ <param name="session">Session hiện tại</param>
+ <param name="computerName">Tên máy trạm</param>
+ <param name="ipAdress">IP máy trạm</param>
+ <remarks></remarks>
+</member>
 <member name="T:Repositories.DB.Common.Constants.UserColumns">
  <summary>
  Enum for UserRepository

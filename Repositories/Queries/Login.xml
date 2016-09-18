@@ -3,7 +3,7 @@
   <SQLQuery>
     <SQlQuery_id>Login_01</SQlQuery_id>
     <SQlQuery_data>
-      SELECT ACTFLG, USER_ID, FULL_NAME, EMAIL, PASSWORD
+      SELECT ACTFLG, USER_ID, EMAIL, PASSWORD
       FROM USER_INFORMATION
       WHERE USER_NAME=@userName
     </SQlQuery_data>

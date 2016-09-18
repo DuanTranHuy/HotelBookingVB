@@ -40,7 +40,6 @@ Public Class LoginRepository
             If dr.Read Then
                 user.ExpFlg = dr.GetBoolean(Constants.UserColumns.ExpFlg)
                 user.Id = dr.GetDecimal(Constants.UserColumns.UserId)
-                user.FullName = dr.GetString(Constants.UserColumns.FullName)
                 user.Email = dr.GetString(Constants.UserColumns.Email)
                 user.Password = dr.GetString(Constants.UserColumns.Password)
             Else

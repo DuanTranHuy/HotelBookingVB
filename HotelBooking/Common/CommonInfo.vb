@@ -29,20 +29,22 @@ Public Class CommonInfo
     ''' <returns>Địa chỉ IP máy trạm</returns>
     ''' <remarks></remarks>
     Public Shared Function mdfWks() As String
-        Dim strIPAddress As String = String.Empty
+
+        Dim getIPv4Address = String.Empty
         Try
-            strIPAddress = HttpContext.Current.Request.ServerVariables(ConstantsForCommon.HttpXForward)
-            If strIPAddress Is Nothing OrElse strIPAddress.Equals(String.Empty) Then
-                strIPAddress = HttpContext.Current.Request.ServerVariables(ConstantsForCommon.RemoteAddr)
-            End If
-            If String.IsNullOrWhiteSpace(strIPAddress) Then
-                strIPAddress = ConstantsForCommon.Minus
-            End If
+            Dim strHostName As String = System.Net.Dns.GetHostName()
+            Dim iphe As System.Net.IPHostEntry = System.Net.Dns.GetHostEntry(strHostName)
+
+            For Each ipheal As System.Net.IPAddress In iphe.AddressList
+                If ipheal.AddressFamily = System.Net.Sockets.AddressFamily.InterNetwork Then
+                    getIPv4Address = ipheal.ToString()
+                End If
+            Next
         Catch ex As Exception
-            strIPAddress = ConstantsForCommon.Minus
+            getIPv4Address = ConstantsForCommon.Minus
             Logger.LogException(ex)
         End Try
-        Return strIPAddress
+        Return getIPv4Address
     End Function
     ''' <summary>
     ''' Lấy địa chỉ IP của máy trạm
@@ -63,12 +65,8 @@ Public Class CommonInfo
         Select Case functionId
             Case ConstantsForCommon.ScreenId.Login
                 Return ConstantsForCommon.CommonsTitleName.Login
-
-        End Select
-        Select Case functionId
             Case ConstantsForCommon.ScreenId.SignUp
                 Return ConstantsForCommon.CommonsTitleName.SignUp
-
         End Select
         Return String.Empty
     End Function
@@ -111,6 +109,22 @@ Public Class CommonInfo
     ''' <param name="s"></param>
     ''' <returns></returns>
     Public Shared Function IsValidEmailFormat(ByVal s As String) As Boolean
-    Return Regex.IsMatch(s, ConstantsForCommon.RegexEmail)
+        Return Regex.IsMatch(s, ConstantsForCommon.RegexEmail)
+    End Function
+    ''' <summary>
+    ''' Mã hóa MD5
+    ''' </summary>
+    ''' <param name="data"></param>
+    ''' <returns></returns>
+    Public Shared Function EncryptData(data As String) As Byte()
+        Dim md5Hasher As New System.Security.Cryptography.MD5CryptoServiceProvider()
+        Dim hashedBytes As Byte()
+        Dim encoder As New System.Text.UTF8Encoding()
+        hashedBytes = md5Hasher.ComputeHash(encoder.GetBytes(data))
+        Return hashedBytes
+    End Function
+
+    Public Shared Function Md5(data As String) As String
+        Return BitConverter.ToString(EncryptData(data)).Replace("-", "").ToLower()
     End Function
 End Class

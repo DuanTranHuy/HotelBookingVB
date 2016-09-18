@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<table>
+  <SQLQuery>
+    <SQlQuery_id>CMN_001</SQlQuery_id>
+    <SQlQuery_data>
+      INSERT INTO SESSION_LOGIN_LOGOUT(
+      ACTFLG,
+      CTDUSR,
+      CTDWKS,
+      CTDPGM,
+      MDFUSR,
+      MDFWKS,
+      MDFPGM,
+      LSTMDF,
+      USER_ID,
+      LOGIN_DT,
+      LOGOUT_DT,
+      IS_ONLINE,
+      SESSION_ID,
+      PC_NAME,
+      PC_IP
+      )
+      VALUES (
+      '1',
+      @userId,
+      @pcIp,
+      'SYS010 - Login',
+      0,
+      '-',
+      '-',
+      NULL,
+      @userId,
+      GETDATE(),
+      NULL,
+      '1',
+      @sessionId,
+      @pcName,
+      @pcIp
+      )
+    </SQlQuery_data>
+  </SQLQuery>
+</table>

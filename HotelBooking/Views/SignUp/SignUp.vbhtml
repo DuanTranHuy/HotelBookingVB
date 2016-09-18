@@ -5,83 +5,24 @@ End Code
 <!DOCTYPE html>
 <html class="hide-sidebar ls-bottom-footer" lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng kí</title>
-    <!-- Vendor CSS BUNDLE
-      Includes styling for all of the 3rd party libraries used with this module, such as Bootstrap, Font Awesome and others.
-      TIP: Using bundles will improve performance by reducing the number of network requests the client needs to make when loading the page. -->
-    <link href="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" />
-    <!-- Vendor CSS Standalone Libraries
-          NOTE: Some of these may have been customized (for example, Bootstrap).
-          See: src/less/themes/{theme_name}/vendor/ directory -->
-    <!-- <link href="css/vendor/bootstrap.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/font-awesome.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/picto.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/material-design-iconic-font.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/datepicker3.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/jquery.minicolors.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/railscasts.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/owl.carousel.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/slick.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/daterangepicker-bs3.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/jquery.bootstrap-touchspin.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/select2.css" rel="stylesheet"> -->
-    <!-- <link href="css/vendor/jquery.countdown.css" rel="stylesheet"> -->
-    <!-- APP CSS BUNDLE [css/app/app.css]
-    INCLUDES:
-        - The APP CSS CORE styling required by the "html" module, also available with main.css - see below;
-        - The APP CSS STANDALONE modules required by the "html" module;
-    NOTE:
-        - This bundle may NOT include ALL of the available APP CSS STANDALONE modules;
-          It was optimised to load only what is actually used by the "html" module;
-          Other APP CSS STANDALONE modules may be available in addition to what's included with this bundle.
-          See src/less/themes/html/app.less
-    TIP:
-        - Using bundles will improve performance by greatly reducing the number of network requests the client needs to make when loading the page. -->
-    <link href="~/Content/HBThemes/css/app/app.css" rel="stylesheet" />
-    <!-- App CSS CORE
-    This variant is to be used when loading the separate styling modules -->
-    <!-- <link href="css/app/main.css" rel="stylesheet"> -->
-    <!-- App CSS Standalone Modules
-      As a convenience, we provide the entire UI framework broke down in separate modules
-      Some of the standalone modules may have not been used with the current theme/module
-      but ALL modules are 100% compatible -->
-    <!-- <link href="css/app/essentials.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/material.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/layout.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/sidebar.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/sidebar-skins.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/navbar.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/messages.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/media.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/charts.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/maps.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/colors-alerts.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/colors-background.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/colors-buttons.css" rel="stylesheet" /> -->
-    <!-- <link href="css/app/colors-text.css" rel="stylesheet" /> -->
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!-- If you don't need support for Internet Explorer <= 8 you can safely remove these -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="~/Content/HBThemes/dist/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="~/Content/HBThemes/assets/css/custom.css" rel="stylesheet" media="screen">
+
+    <link src="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" /> 
+    <link src="~/Content/HBThemes/css/app/app.css" rel="stylesheet" />
+    <script src="~/Content/HBThemes/assets/js/jquery.v2.0.3.js"></script>
 </head>
-<body class="login">
-    <div id="content">
-        <div class="container-fluid">
-            <div class="lock-container">
-                <div class="panel panel-default text-center paper-shadow" data-z="0.5">
+<body>
+
+        <div class="container">
+            <div class="row main">
+                <div class="main-login main-center">
                     <img src="~/Content/HBThemes/images/logo2.png" class="login-img" alt="logo" /><br />
                     <h1 class="text-display-1">Tạo tài khoản</h1>
-                    <div class="panel-body">
                         <!-- Signup -->
-                        <form role="form" action="index.html">
                             <div class="form-group">
                                 <div class="form-control-material">
                                     <input id="txtUserName" type="text" class="form-control" placeholder="">
@@ -124,21 +65,18 @@ End Code
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-primary" type="submit" id="btnSignUp" onclick="errorMessage()">Đăng kí ngay</button>
-                                @*<a href="website-student-dashboard.html" class="btn btn-primary">Đăng kí ngay</a>*@
+                                <button class="btn btn-primary" type="submit" id="btnSignUp">Đăng kí ngay</button>                      
                             </div>
                             <div class="form-group">
                                 <label>Hoặc đăng kí nhanh với</label>
-                                <a href="#" class="social1b"><img src="~/Content/HBThemes/images/icon-facebook.png" alt="" /></a>
+                                <button id="btnFacebook" class="social1b"><img src="~/Content/HBThemes/images/icon-facebook.png" alt="" /></button>
                                 <a href="#" class="social3b"><img src="~/Content/HBThemes/images/icon-gplus.png" alt="" /></a>
                             </div>
-                        </form>
                         <!-- End Signup -->
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <strong>Hotel Booking</strong> v1.1.0 &copy; Copyright 2016
@@ -169,12 +107,9 @@ End Code
         };
     </script>
 
-    <!-- Logical -->
-    <script src="~/Content/HBThemes/js/vendor/all.js"></script>
-    <script src="~/Content/HBThemes/js/app/app.js"></script>
-    <script type="text/javascript">
 
-        // Focus in txtUserName
+    <!-- Logical -->
+    <script type="text/javascript">
         $(document).ready(function () {
 
             $(function () {
@@ -193,16 +128,18 @@ End Code
                 }
             }
         });
-
         $('#btnSignUp').click(function () {
             if (Validate()) {
                 SignUp();
             } else {
-                function errorMessage() {
-                }
+
                 return false;
             }
         });
+        function isValidEmailAddress(emailAddress) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(emailAddress);
+        };
         function Validate() {
             var userName = $('#txtUserName').val();
             var email = $('#txtEmail').val();
@@ -219,15 +156,26 @@ End Code
                 $('#lblUserNameFail').text("Vui lòng nhập tên đăng nhập");
                 $('#txtUsername').focus();
                 return false;
-            } 
+            }
 
             else if (email == "") {
                 $('#lblEmailFail').text("Vui lòng nhập địa chỉ Email");
                 $('#txtEmail').focus();
                 return false;
             }
+            else if (!isValidEmailAddress(email)){
+                $('#lblEmailFail').text("Địa chỉ Email không đúng định dạng");
+                $('#txtEmail').focus();
+                return false;
+            }
+
             else if (confirmEmail == "") {
                 $('#lblConfirmEmailFail').text("Vui lòng nhập lại địa chỉ Email");
+                $('#txtConfirmEmail').focus();
+                return false;
+            }
+            else if (confirmEmail != email) {
+                $('#lblConfirmEmailFail').text("Xác nhận địa chỉ email không giống với email");
                 $('#txtConfirmEmail').focus();
                 return false;
             }
@@ -238,6 +186,11 @@ End Code
             }
             else if (confirmPassword == "") {
                 $('#lblConfirmPasswordFail').text("Vui lòng nhập lại mật khẩu");
+                $('#txtConfirmPassword').focus();
+                return false;
+            }
+            else if (password != confirmPassword) {
+                $('#lblConfirmPasswordFail').text("Xác nhận mật khẩu không trùng với mật khẩu");
                 $('#txtConfirmPassword').focus();
                 return false;
             }
@@ -269,7 +222,7 @@ End Code
                     switch (res.Status) {
                         case 1:
                             $('#lblUserNameFail').text(res.Message);
-                            $('#txtUsername').focus();
+                            $('#txtUserName').focus();
                             break;
                         case 2:
                             $('#lblEmailFail').text(res.Message);

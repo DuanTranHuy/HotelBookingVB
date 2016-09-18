@@ -232,6 +232,7 @@
     <Compile Include="App_Start\Startup.Auth.vb" />
     <Compile Include="Common\CommonInfo.vb" />
     <Compile Include="Common\ConstantsForCommon.vb" />
+    <Compile Include="Common\Header.vb" />
     <Compile Include="Common\Logger.vb" />
     <Compile Include="Common\StatusObjForJsonResult.vb" />
     <Compile Include="Common\Util.vb" />
@@ -474,6 +475,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\HBThemes\about.html" />
+    <Content Include="Content\HBThemes\assets\css\animate.css" />
     <Content Include="Content\HBThemes\assets\css\custom.css" />
     <Content Include="Content\HBThemes\assets\css\dashboard.css" />
     <Content Include="Content\HBThemes\assets\css\docs.css" />
@@ -569,7 +571,10 @@
     <Content Include="Content\HBThemes\css\vendor\datepicker3.css" />
     <Content Include="Content\HBThemes\css\vendor\daterangepicker-bs3.css" />
     <Content Include="Content\HBThemes\css\vendor\font-awesome.css" />
+    <Content Include="Content\HBThemes\css\vendor\fonts\slick.eot" />
     <Content Include="Content\HBThemes\css\vendor\fonts\slick.svg" />
+    <Content Include="Content\HBThemes\css\vendor\fonts\slick.ttf" />
+    <Content Include="Content\HBThemes\css\vendor\fonts\slick.woff" />
     <Content Include="Content\HBThemes\css\vendor\jquery.bootstrap-touchspin.css" />
     <Content Include="Content\HBThemes\css\vendor\jquery.countdown.css" />
     <Content Include="Content\HBThemes\css\vendor\jquery.minicolors.css" />
@@ -710,6 +715,7 @@
     <Content Include="Content\HBThemes\images\dubai.jpg" />
     <Content Include="Content\HBThemes\images\egypt-thumb.jpg" />
     <Content Include="Content\HBThemes\images\egypt.jpg" />
+    <Content Include="Content\HBThemes\images\error-screen.png" />
     <Content Include="Content\HBThemes\images\fav-book-icons.png" />
     <Content Include="Content\HBThemes\images\fav-book-icons.psd" />
     <Content Include="Content\HBThemes\images\filter-rating-1.png" />
@@ -776,6 +782,7 @@
     <Content Include="Content\HBThemes\images\parisbg.jpg" />
     <Content Include="Content\HBThemes\images\plane.jpg" />
     <Content Include="Content\HBThemes\images\profile-icons.png" />
+    <Content Include="Content\HBThemes\images\profile-icons.psd" />
     <Content Include="Content\HBThemes\images\rating-4.png" />
     <Content Include="Content\HBThemes\images\road.jpg" />
     <Content Include="Content\HBThemes\images\rome-thumb.jpg" />
@@ -783,6 +790,7 @@
     <Content Include="Content\HBThemes\images\select-intro.png" />
     <Content Include="Content\HBThemes\images\select-over.png" />
     <Content Include="Content\HBThemes\images\select.png" />
+    <Content Include="Content\HBThemes\images\select.psd" />
     <Content Include="Content\HBThemes\images\slide phong 1.jpg" />
     <Content Include="Content\HBThemes\images\slide phong 2.jpg" />
     <Content Include="Content\HBThemes\images\slider\bahamas.jpg" />
@@ -984,6 +992,7 @@
     <Content Include="Content\HBThemes\images\socials.png" />
     <Content Include="Content\HBThemes\images\spacer.png" />
     <Content Include="Content\HBThemes\images\sprite.png" />
+    <Content Include="Content\HBThemes\images\sprite.psd" />
     <Content Include="Content\HBThemes\images\surfer-thumb.jpg" />
     <Content Include="Content\HBThemes\images\surfer.jpg" />
     <Content Include="Content\HBThemes\images\test.jpg" />
@@ -1087,6 +1096,7 @@
     <Content Include="Content\HBThemes\images\user-rating-3.png" />
     <Content Include="Content\HBThemes\images\user-rating-4.png" />
     <Content Include="Content\HBThemes\images\user-rating-5.png" />
+    <Content Include="Content\HBThemes\images\user-rating.psd" />
     <Content Include="Content\HBThemes\images\user.png" />
     <Content Include="Content\HBThemes\index.html" />
     <Content Include="Content\HBThemes\index2.html" />
@@ -1098,6 +1108,7 @@
     <Content Include="Content\HBThemes\intro.html" />
     <Content Include="Content\HBThemes\intro2.html" />
     <Content Include="Content\HBThemes\intro3.html" />
+    <Content Include="Content\HBThemes\js\.jshintrc" />
     <Content Include="Content\HBThemes\js\affix.js" />
     <Content Include="Content\HBThemes\js\alert.js" />
     <Content Include="Content\HBThemes\js\app\all.js" />
@@ -1222,8 +1233,10 @@
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.plastic.png" />
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.png" />
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round-blue.png" />
+    <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round-blue.psd" />
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round.plastic.png" />
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round.png" />
+    <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round.psd" />
     <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round_old.png" />
     <Content Include="Content\HBThemes\plugins\jslider\js\draggable-0.1.js" />
     <Content Include="Content\HBThemes\plugins\jslider\js\jquery.dependClass-0.1.js" />
@@ -1235,6 +1248,8 @@
     <Content Include="Content\HBThemes\profile.html" />
     <Content Include="Content\HBThemes\rs-plugin\assets\arrowleft.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\arrowright.png" />
+    <Content Include="Content\HBThemes\rs-plugin\assets\arrows.psd" />
+    <Content Include="Content\HBThemes\rs-plugin\assets\arrows2.psd" />
     <Content Include="Content\HBThemes\rs-plugin\assets\arrow_large_left.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\arrow_large_right.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\arrow_left.png" />
@@ -1245,7 +1260,9 @@
     <Content Include="Content\HBThemes\rs-plugin\assets\boxed_bgtile.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\bullet - Copy.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\bullet.png" />
+    <Content Include="Content\HBThemes\rs-plugin\assets\bullet.psd" />
     <Content Include="Content\HBThemes\rs-plugin\assets\bullets.png" />
+    <Content Include="Content\HBThemes\rs-plugin\assets\bullets.psd" />
     <Content Include="Content\HBThemes\rs-plugin\assets\bullets2.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\bullet_boxed.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\coloredbg.png" />
@@ -1265,6 +1282,7 @@
     <Content Include="Content\HBThemes\rs-plugin\assets\shadow2.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\shadow3.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\slider-bg.png" />
+    <Content Include="Content\HBThemes\rs-plugin\assets\small_arrows.psd" />
     <Content Include="Content\HBThemes\rs-plugin\assets\small_left.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\small_left_boxed.png" />
     <Content Include="Content\HBThemes\rs-plugin\assets\small_right.png" />
@@ -1284,7 +1302,11 @@
     <Content Include="Content\HBThemes\rs-plugin\js\jquery.themepunch.revolution.min_.js" />
     <Content Include="Content\HBThemes\rs-plugin\pluginsources\jquery.themepunch.plugins.min.js" />
     <Content Include="Content\HBThemes\rs-plugin\pluginsources\jquery.themepunch.revolution.js" />
+    <Content Include="Content\HBThemes\rs-plugin\videojs\demo.captions.vtt" />
+    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.eot" />
     <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.svg" />
+    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.ttf" />
+    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.woff" />
     <Content Include="Content\HBThemes\rs-plugin\videojs\video-js.min.css" />
     <Content Include="Content\HBThemes\rs-plugin\videojs\video-js.png" />
     <Content Include="Content\HBThemes\rs-plugin\videojs\video-js.swf" />
@@ -1412,25 +1434,6 @@
     <Content Include="Content\AdminTemplate\assets\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\AdminTemplate\LICENSE.md" />
     <Content Include="Content\AdminTemplate\README.md" />
-    <Content Include="Content\HBThemes\images\profile-icons.psd" />
-    <Content Include="Content\HBThemes\images\select.psd" />
-    <Content Include="Content\HBThemes\images\sprite.psd" />
-    <Content Include="Content\HBThemes\images\user-rating.psd" />
-    <Content Include="Content\HBThemes\js\.jshintrc" />
-    <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round-blue.psd" />
-    <Content Include="Content\HBThemes\plugins\jslider\img\jslider.round.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\assets\arrows.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\assets\arrows2.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\assets\bullet.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\assets\bullets.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\assets\small_arrows.psd" />
-    <Content Include="Content\HBThemes\rs-plugin\videojs\demo.captions.vtt" />
-    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.eot" />
-    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.ttf" />
-    <Content Include="Content\HBThemes\rs-plugin\videojs\font\vjs.woff" />
-    <Content Include="Content\HBThemes\css\vendor\fonts\slick.eot" />
-    <Content Include="Content\HBThemes\css\vendor\fonts\slick.ttf" />
-    <Content Include="Content\HBThemes\css\vendor\fonts\slick.woff" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -1445,6 +1448,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="Scripts\FaceBook.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -1489,7 +1493,9 @@
     <Content Include="Views\_ViewStart.vbhtml" />
     <Content Include="Views\Shared\Error.vbhtml" />
     <Content Include="Views\Shared\_Layout.vbhtml" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

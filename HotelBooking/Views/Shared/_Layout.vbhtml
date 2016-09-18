@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@Code
+    Dim WelcomeMessage As String = Header.GetWelcomeMessage()
+    Dim ShowHeader As Boolean = IIf(IsNothing(ViewBag.ShowHeader), True, ViewBag.ShowHeader)
+End Code
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -144,29 +148,16 @@
                                     </li>
                                 </ul>
                             </li>
-                            @*<li><a href="#">Khách sạn</a></li>
-                                <li><a href="#">Chuyến bay</a></li>
-                                <li><a href="#">Du lịch</a></li>
-                                <li><a href="#">Xe</a></li>
-                                <li><a href="#">Biển</a></li>
-                                <li><a href="#">Mới nhất</a></li>
-                                <li><a href="#">Khuyến mại</a></li>*@
-                            @*<li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hướng dẫn<b class="lightcaret mt-2"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-header">Aligned Right Dropdown</li>
-                                        <li><a href="#">Sample Link 1</a></li>
-                                        <li><a href="#">Sample Link 2</a></li>
-                                    </ul>
-                                </li>*@
-                            @*<li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>*@
-                            <li>@Html.ActionLink("Error Screen", "ErrorScreen", "ErrorScreen", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
-                            <li class="dropdown">
 
-                            <li class="dropdown" id="dropDownLogin">
+
+                            <li>@Html.ActionLink("Đăng kí", "SignUp", "SignUp", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+                            <li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+                            <li class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></li>
+                            @*<li class="dropdown" id="dropDownLogin">
 
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Đăng nhập<span class="lightcaret mt-2"></span></a>
-                                <ul id="login-dp" class="dropdown-menu">
+                                @If showHeader then
+                                @<ul id="login-dp" class="dropdown-menu">
                                     <li>
                                         <div class="row">
                                             <div class="col-md-12">
@@ -199,12 +190,13 @@
                                                 End Using
                                             </div>
                                             <div class="bottom text-center">
-                                                Bạn chưa có tài khoản? <a href="#"><b> Tạo mới</b></a>
+                                                Bạn chưa có tài khoản? <a href="@Url.Action("SignUp", "SignUp")"><b> Tạo mới</b></a>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-                            </li>
+                                End IF
+                            </li>*@
                         </ul>
                     </div>
                     <!-- /Navigation-->

@@ -1,7 +1,11 @@
-﻿Imports Microsoft.AspNet.Identity
+﻿Imports System.Net.Http
+Imports System.Security.Claims
+Imports System.Threading.Tasks
+Imports Microsoft.AspNet.Identity
 Imports Microsoft.AspNet.Identity.Owin
 Imports Microsoft.Owin
 Imports Microsoft.Owin.Security.Cookies
+Imports Microsoft.Owin.Security.Facebook
 Imports Microsoft.Owin.Security.Google
 Imports Owin
 
@@ -24,7 +28,7 @@ Partial Public Class Startup
                 .OnValidateIdentity = SecurityStampValidator.OnValidateIdentity(Of ApplicationUserManager, ApplicationUser)(
                     validateInterval:=TimeSpan.FromMinutes(30),
                     regenerateIdentity:=Function(manager, user) user.GenerateUserIdentityAsync(manager))},
-            .LoginPath = New PathString("/Account/Login")})
+            .LoginPath = New PathString("/Login/Login")})
 
         app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie)
 
@@ -45,12 +49,29 @@ Partial Public Class Startup
         '   consumerKey:="",
         '   consumerSecret:="")
 
-        'app.UseFacebookAuthentication(
-        '   appId:="",
-        '   appSecret:="")
+        Dim facebookOptions = New FacebookAuthenticationOptions()
+        facebookOptions.AppId = "1667139900267838"
+        facebookOptions.AppSecret = "a09c95760deb56af5bdfac48f39d88e9"
+        facebookOptions.BackchannelHttpHandler = new FacebookBackChannelHandler()
+               facebookOptions.UserInformationEndpoint ="https://graph.facebook.com/v2.4/me?fields=id,name,email,first_name,last_name"
+        facebookOptions.Provider = New FacebookAuthenticationProvider() With {
+            .OnAuthenticated = Function(context)
+                                   context.Identity.AddClaim(New System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken))
+                                   Return Task.FromResult(0)
+                               End Function
+        }
 
-        'app.UseGoogleAuthentication(New GoogleOAuth2AuthenticationOptions() With {
-        '   .ClientId = "",
-        '   .ClientSecret = ""})
+        app.UseFacebookAuthentication(facebookOptions)
     End Sub
+    Public Class FacebookBackChannelHandler
+        Inherits HttpClientHandler
+        Protected Overrides Function SendAsync(request As HttpRequestMessage, cancellationToken As System.Threading.CancellationToken) As System.Threading.Tasks.Task(Of HttpResponseMessage)
+            If Not request.RequestUri.AbsolutePath.Contains("/oauth") Then
+                request.RequestUri = New Uri(request.RequestUri.AbsoluteUri.Replace("?access_token", "&access_token"))
+            End If
+
+            Return MyBase.SendAsync(request, cancellationToken)
+        End Function
+    End Class
+    Const XmlSchemaString As String = "http://www.w3.org/2001/XMLSchema#string"
 End Class

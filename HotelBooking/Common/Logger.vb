@@ -28,18 +28,18 @@ Public Class Logger
         Dim repo As New CommonRepository()
         repo.LogUserLogOut(UserID, SessionID, ComputerName, IpAdress)
     End Sub
-    '''' <summary>
-    '''' Lưu lại thông tin người dùng khi đăng xuất (trong trường hợp bị ngắt kết nối)
-    '''' </summary>
-    '''' <param name="UserID"></param>
-    '''' <param name="SessionID"></param>
-    '''' <param name="ComputerName"></param>
-    '''' <param name="IpAdress"></param>
-    '''' <remarks></remarks>
-    'Public Shared Sub LogUserLogoutOnSessionEnd(ByVal UserID As ULong, ByVal SessionID As String, ByVal ComputerName As String, ByVal IpAdress As String)
-    '    Dim repo As New CommonRepository()
-    '    repo.LogUserLogoutOnSessionEnd(UserID, SessionID, ComputerName, IpAdress)
-    'End Sub
+    ''' <summary>
+    ''' Lưu lại thông tin người dùng khi đăng xuất (trong trường hợp bị ngắt kết nối)
+    ''' </summary>
+    ''' <param name="UserID"></param>
+    ''' <param name="SessionID"></param>
+    ''' <param name="ComputerName"></param>
+    ''' <param name="IpAdress"></param>
+    ''' <remarks></remarks>
+    Public Shared Sub LogUserLogoutOnSessionEnd(ByVal UserID As ULong, ByVal SessionID As String, ByVal ComputerName As String, ByVal IpAdress As String)
+        Dim repo As New CommonRepository()
+        repo.LogUserLogoutOnSessionEnd(UserID, SessionID, ComputerName, IpAdress)
+    End Sub
     ''' <summary>
     ''' Lưu thông tin đặc biệt
     ''' </summary>

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="LAYOUT_M001" xml:space="preserve">
+    <value>Welcome : {0}</value>
+  </data>
   <data name="LOGIN_M001" xml:space="preserve">
     <value>Vui lòng nhập tên đăng nhập</value>
   </data>
@@ -136,18 +139,27 @@
     <value>Vui lòng nhập địa chỉ Email</value>
   </data>
   <data name="SIGNUP_M003" xml:space="preserve">
-    <value>Vui lòng nhập lại địa chỉ Email</value>
+    <value>Địa chỉ Email không đúng định dạng</value>
   </data>
   <data name="SIGNUP_M004" xml:space="preserve">
-    <value>Vui lòng nhập mật khẩu</value>
+    <value>Vui lòng nhập lại địa chỉ Email</value>
   </data>
   <data name="SIGNUP_M005" xml:space="preserve">
-    <value>Vui lòng nhập lại mật khẩu</value>
+    <value>Xác nhận địa chỉ email không giống với email</value>
   </data>
   <data name="SIGNUP_M006" xml:space="preserve">
-    <value>Tên đăng nhập đã tồn tại</value>
+    <value>Vui lòng nhập mật khẩu</value>
   </data>
   <data name="SIGNUP_M007" xml:space="preserve">
-    <value>Địa chỉ Email đã tồn tại</value>
+    <value>Vui lòng nhập lại mật khẩu</value>
+  </data>
+  <data name="SIGNUP_M008" xml:space="preserve">
+    <value>Xác nhận mật khẩu không trùng với mật khẩu</value>
+  </data>
+  <data name="SIGNUP_M009" xml:space="preserve">
+    <value>Tên đăng nhập đã tồn tại</value>
+  </data>
+  <data name="SIGNUP_M010" xml:space="preserve">
+    <value>Email đăng kí đã tồn tại</value>
   </data>
 </root>

@@ -1,3 +1,47 @@
-﻿Public Class SignUp
-
-End Class
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Table>
+  <SQLQuery>
+    <SQlQuery_id>SignUp_01</SQlQuery_id>
+    <SQlQuery_data>
+      INSERT INTO USER_INFORMATION
+      (
+      ACTFLG,
+      CTDUSR,
+      CTDWKS,
+      CTDPGM,
+      USER_NAME,
+      DEPARTMENT_ID,
+      EMAIL,
+      USER_POINT,
+      PASSWORD)
+      VALUES(
+      @AcceptFlag,
+      @UserName,
+      @CreatedMachine,
+      @CreatedProgram,
+      @UserName,
+      0,
+      @Email,
+      0,
+      @Password
+      )
+    </SQlQuery_data>
+  </SQLQuery>
+  <SQLQuery>
+    <SQlQuery_id>SignUp_02</SQlQuery_id>
+    <SQlQuery_data>
+      SELECT COUNT(USER_NAME) AS USER_COUNT
+      FROM USER_INFORMATION
+      WHERE USER_NAME = @userName
+    </SQlQuery_data>
+  </SQLQuery>
+  <SQLQuery>
+    <SQlQuery_id>SignUp_03</SQlQuery_id>
+    <SQlQuery_data>
+      SELECT COUNT(EMAIL) AS EMAIL_COUNT
+      FROM USER_INFORMATION
+      WHERE EMAIL = @email
+    </SQlQuery_data>
+  </SQLQuery>
+  
+</Table>
