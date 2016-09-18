@@ -78,13 +78,6 @@ HotelBooking
  <param name="data"></param>
  <returns></returns>
 </member>
-<member name="M:HotelBooking.Header.GetWelcomeMessage">
- <summary>
- Lấy giá trị cho lời chào hệ thống
- </summary>
- <returns></returns>
- <remarks></remarks>
-</member>
 <member name="M:HotelBooking.Logger.LogUserLogin(System.UInt64,System.String,System.String,System.String)">
  <summary>
  Lưu lại thông tin người dùng đăng nhập hệ thống

@@ -48,60 +48,33 @@
         ''' Enum for UserRepository
         ''' </summary>
         ''' <remarks></remarks>
-        Public Enum UserColumns            
+        Public Enum UserColumns
             ExpFlg = 0
             UserId = 1
             Email = 2
             Password = 3
         End Enum
 
-        Public Enum UserCountColumns
-            CountUserId = 0
-        End Enum
-
-        Public Enum GetFunctionAccessColumns
-            UserId = 0
-            FunctionId = 1
-            CFlg = 2
-            RFlg = 3
-            UFlg = 4
-            DFlg = 5
-        End Enum
-
-        Public Enum GetFileOfType
-            Value = 0
-        End Enum
-        Public Enum GetAttachFolder
-            Value = 0
-        End Enum
-
-        Public Enum GetPermissionFlag
-            PermissionFlg = 0
-        End Enum
-
-
-        Public Enum GetMasterCode
-            MasterCode = 0
-        End Enum
-
-        Public Enum GetMakerType
-            MakerType = 0
-        End Enum
 
         Public Const DateTimeFormatForDisplay = "dd/MM/yyyy HH:mm"
-                Public Class Common
+        Public Class Common
+            Public Const CMN_002 As String = "CMN_002"
             Public Const CMN_001 As String = "CMN_001"
             Public Const COMMON As String = "COMMON"
         End Class
         Public Class Login
+            Public Const Login_03 As String = "Login_03"
+            Public Const Login_02 As String = "Login_02"
             Public Const Login_01 As String = "Login_01"
             Public Const Login As String = "Login"
         End Class
+        Public Const ExternalLogin As String = "ExternalLogin"
         Public Class SignUp
             Public Const SignUp As String = "SignUp"
             Public Const SignUp_01 As String = "SignUp_01"
             Public Const SignUp_02 As String = "SignUp_02"
             Public Const SignUp_03 As String = "SignUp_03"
+                        Public Const SignUp_04 As String = "SignUp_04"
         End Class
 
     End Class

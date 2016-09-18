@@ -113,7 +113,7 @@ Namespace Controllers
             Finally
                 Util.RemoveSessionHbs(True)
             End Try
-            Return Redirect(Request.Url.ToString())
+            Return RedirectToAction("Home", "Home")
         End Function
 
         '
@@ -132,43 +132,60 @@ Namespace Controllers
         <AllowAnonymous>
         Public Async Function ExternalLoginCallback(returnUrl As String) As Task(Of ActionResult)
             Dim identity = AuthenticationManager.GetExternalIdentity(DefaultAuthenticationTypes.ExternalCookie)
-            Dim accessToken = identity.FindFirstValue("FacebookAccessToken")
+            Dim facebookAccessToken = identity.FindFirstValue("FacebookAccessToken")
+            Dim googleAccessToken = identity.FindFirstValue("GoogleAccessToken")
             Dim loginInfo = Await AuthenticationManager.GetExternalLoginInfoAsync()
+                        If loginInfo.Email Is Nothing Then
+                Return RedirectToAction("Login")
+            End If
+            Dim ctdWks As String = CommonInfo.ctdWks()
+            Dim actFlg As String = CommonInfo.actFlg()
+            Dim ctdPgm As String = CommonInfo.mdfPgm(ConstantsForCommon.ScreenName.SignUp)
             Dim repo As New LoginRepository()
+            Dim signUp As New SignUpRepository()
             Dim functionname As String = CommonInfo.mdfPgm(ConstantsForCommon.ScreenId.Login)
+            Dim isExistEmail As Integer
+            Dim isExistAccount As Integer
             Dim sessionId As String = String.Empty
             If IsNothing(Session(ConstantsForCommon.SessionParam.SessionId)) Then
                 sessionId = Web.HttpContext.Current.Session.SessionID
+            Else
+                    SessionId = Session(ConstantsForCommon.SessionParam.SessionId)
+                    Logger.LogUserLogout(Session(ConstantsForCommon.SessionParam.SessionUserId), Session(ConstantsForCommon.SessionParam.SessionId), _
+                                         CommonInfo.GetPCName(), CommonInfo.mdfWks())
+                    Util.RemoveSessionHbs(True)
+                End If
+            isExistEmail = repo.CheckExistEmail(loginInfo.Email)
+            If isExistEmail <> 0 Then
+                isExistAccount = repo.CheckExistAccount(loginInfo.Login.ProviderKey)
+                If isExistAccount <> 0 Then
+                    Login(loginInfo.Login.ProviderKey, CommonInfo.Md5(loginInfo.Email))
+                Else
+                    TempData("Message") = "Profile Updated Successfully"
+                    Return RedirectToAction("Login")
+                End If
+           
+            Else
+                isExistAccount = repo.CheckExistAccount(loginInfo.Login.LoginProvider)
+                If isExistAccount <> 0 Then
+                    Login(loginInfo.Login.ProviderKey, CommonInfo.Md5(loginInfo.Email))
+                End If
+                signUp.SignUpViaSocial(actFlg, ctdWks, ctdPgm, loginInfo.Login.ProviderKey, loginInfo.Email,identity.Name, CommonInfo.Md5(loginInfo.Email))
+                Login(loginInfo.Login.ProviderKey, CommonInfo.Md5(loginInfo.Email))
             End If
-            Logger.LogUserLogin(loginInfo.Login.ProviderKey, sessionId, CommonInfo.GetPCName(), CommonInfo.mdfWks())
-            Session.Add(ConstantsForCommon.SessionParam.SessionUserId, loginInfo.Login.ProviderKey)
+            Dim user As New Login()
+                    user = repo.Login(loginInfo.Login.ProviderKey)
+
+            Logger.LogUserLogin(user.Id, sessionId, CommonInfo.GetPCName(), CommonInfo.mdfWks())
+            Session.Add(ConstantsForCommon.SessionParam.SessionUserId, user.Id)
             Session.Add(ConstantsForCommon.SessionParam.SessionUserName, loginInfo.DefaultUserName)
-            Session.Add(ConstantsForCommon.SessionParam.SessionUserPass, accessToken)
             Session.Add(ConstantsForCommon.SessionParam.SessionFullName, identity.Name)
             Session.Add(ConstantsForCommon.SessionParam.SessionId, sessionId)
             If loginInfo Is Nothing Then
                 Return RedirectToAction("Login")
             End If
-
-            ' Sign in the user with this external login provider if the user already has a login
-            Dim result = Await SignInManager.ExternalSignInAsync(loginInfo, isPersistent:=False)
-            Select Case result
-                Case SignInStatus.Success
-                    Return RedirectToLocal(returnUrl)
-                Case Else
-                    ' If the user does not have an account, then prompt the user to create an account
-                    ViewBag.ReturnUrl = returnUrl
-                    ViewBag.LoginProvider = loginInfo.Login.LoginProvider
-                    Return View("ExternalLoginConfirmation", New ExternalLoginConfirmationViewModel() With {
-                        .Email = loginInfo.Email
-                    })
-            End Select
-
-
-
+            Return RedirectToAction("Home", "Home")
         End Function
-
-
         ' POST: /Account/LogOff
         <HttpPost>
         <ValidateAntiForgeryToken>

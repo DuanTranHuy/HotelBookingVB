@@ -8,6 +8,7 @@
       CTDUSR,
       CTDWKS,
       CTDPGM,
+      CTD_DT,
       MDFUSR,
       MDFWKS,
       MDFPGM,
@@ -25,6 +26,7 @@
       @userId,
       @pcIp,
       'SYS010 - Login',
+      GETDATE(),
       0,
       '-',
       '-',
@@ -37,6 +39,23 @@
       @pcName,
       @pcIp
       )
+    </SQlQuery_data>
+  </SQLQuery>
+  <SQLQuery>
+    <SQlQuery_id>CMN_002</SQlQuery_id>
+    <SQlQuery_data>
+      UPDATE SESSION_LOGIN_LOGOUT
+      SET
+      MDFUSR = @userId,
+      MDFWKS = @pcIp,
+      MDFPGM = 'SYS013-LOGOUT',
+      LSTMDF = GETDATE(),
+      LOGOUT_DT = GETDATE(),
+      IS_ONLINE = '0'
+      WHERE
+      USER_ID = @userId AND
+      SESSION_ID = @sessionId AND
+      IS_ONLINE = '1'
     </SQlQuery_data>
   </SQLQuery>
 </table>

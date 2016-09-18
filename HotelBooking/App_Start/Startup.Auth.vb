@@ -42,8 +42,8 @@ Partial Public Class Startup
 
         ' Uncomment the following lines to enable logging in with third party login providers
         'app.UseMicrosoftAccountAuthentication(
-        '    clientId:="",
-        '    clientSecret:="")
+        '    clientId:="794245959861-1qi3r089uiigbdl0a2kcao5b40t7246u.apps.googleusercontent.com",
+        '    clientSecret:="Ck9xvA0FeW5GFE57pkC2allJ")
 
         'app.UseTwitterAuthentication(
         '   consumerKey:="",
@@ -52,8 +52,10 @@ Partial Public Class Startup
         Dim facebookOptions = New FacebookAuthenticationOptions()
         facebookOptions.AppId = "1667139900267838"
         facebookOptions.AppSecret = "a09c95760deb56af5bdfac48f39d88e9"
-        facebookOptions.BackchannelHttpHandler = new FacebookBackChannelHandler()
-               facebookOptions.UserInformationEndpoint ="https://graph.facebook.com/v2.4/me?fields=id,name,email,first_name,last_name"
+        facebookOptions.Scope.Add("email")
+        facebookOptions.Scope.Add("public_profile")
+        facebookOptions.BackchannelHttpHandler = New FacebookBackChannelHandler()
+        facebookOptions.UserInformationEndpoint = "https://graph.facebook.com/v2.4/me?fields=id,name,email,first_name,last_name"
         facebookOptions.Provider = New FacebookAuthenticationProvider() With {
             .OnAuthenticated = Function(context)
                                    context.Identity.AddClaim(New System.Security.Claims.Claim("FacebookAccessToken", context.AccessToken))
@@ -62,6 +64,18 @@ Partial Public Class Startup
         }
 
         app.UseFacebookAuthentication(facebookOptions)
+        Dim googleOptions = New GoogleOAuth2AuthenticationOptions()
+        googleOptions.ClientId = "794245959861-1qi3r089uiigbdl0a2kcao5b40t7246u.apps.googleusercontent.com"
+        googleOptions.ClientSecret = "Ck9xvA0FeW5GFE57pkC2allJ"
+        googleOptions.CallbackPath = New PathString("/oauth-redirect/google")
+        googleOptions.Provider = New GoogleOAuth2AuthenticationProvider() With {
+            .OnAuthenticated = Function(context)
+                                   context.Identity.AddClaim(New System.Security.Claims.Claim("GoogleAccessToken", context.AccessToken))
+                                   Return Task.FromResult(0)
+                               End Function
+        }
+
+        app.UseGoogleAuthentication(googleOptions)
     End Sub
     Public Class FacebookBackChannelHandler
         Inherits HttpClientHandler

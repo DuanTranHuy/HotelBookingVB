@@ -1,6 +1,6 @@
-﻿@Code
-    Dim WelcomeMessage As String = Header.GetWelcomeMessage()
-    Dim ShowHeader As Boolean = IIf(IsNothing(ViewBag.ShowHeader), True, ViewBag.ShowHeader)
+﻿@Imports Microsoft.AspNet.Identity
+@Code
+    Dim Session As String= HttpContext.Current.Session("FULLNAME")
 End Code
 <!DOCTYPE html>
 <html>
@@ -148,10 +148,20 @@ End Code
                                     </li>
                                 </ul>
                             </li>
+@If Not Session Is Nothing Then
+    @Using Html.BeginForm("LogOut", "Login", New With {.area = ""}, FormMethod.Post, New With {.id = "logoutForm", .class = "navbar-right"})
+        @Html.AntiForgeryToken()
 
+            @<li>
+                @Html.ActionLink("Hello " + Session + "!", "Index", "Manage", routeValues:=New With {.area = ""}, htmlAttributes:=New With {.title = "Manage"})
+            </li>
+            @<li><a href="@Url.Action("LogOut","Login")" id="LogOut">Log Out</a></li>
 
-                            <li>@Html.ActionLink("Đăng kí", "SignUp", "SignUp", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
-                            <li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+    End Using
+Else
+                            @<li>@Html.ActionLink("Đăng kí", "SignUp", "SignUp", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+                            @<li>@Html.ActionLink("Đăng nhập", "Login", "Login", routeValues:=Nothing, htmlAttributes:=New With {.id = Nothing})</li>
+                            End If
                             <li class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></li>
                             @*<li class="dropdown" id="dropDownLogin">
 
@@ -322,16 +332,6 @@ End Code
     @Section Scripts
     <script type="text/javascript">
         $(document).ready(function () {
-            //$('#dropDownLogin').hide(0);
-            //$('#dropDownLogin').click(function () {
-            //    $('#dropDownLogin').hide(0);
-            //    $(this).find("#dropDownLogin").show(0);
-            //});
-            //$('#dropDownLogin').click(function (e) {
-            //    $('#dropDownLogin').hide(0);
-            //    $(this).find("#dropDownLogin").show(0);
-            //    e.stopPropagation();
-            //})
               $(document).keypress(function (event) {
                   var keycode = (event.keyCode ? event.keyCode : event.which);
                   if (keycode == '13') {

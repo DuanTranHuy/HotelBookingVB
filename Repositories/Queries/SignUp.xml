@@ -10,6 +10,10 @@
       CTDWKS,
       CTDPGM,
       CTD_DT,
+      MDFUSR,
+      MDFWKS,
+      MDFPGM,
+      LSTMDF,
       USER_NAME,
       DEPARTMENT_ID,
       EMAIL,
@@ -20,6 +24,10 @@
       @UserName,
       @CreatedMachine,
       @CreatedProgram,
+      GETDATE(),
+      0,
+      '-',
+      '-',
       GETDATE(),
       @UserName,
       0,
@@ -45,5 +53,43 @@
       WHERE EMAIL = @email
     </SQlQuery_data>
   </SQLQuery>
-  
+  <SQLQuery>
+    <SQlQuery_id>SignUp_04</SQlQuery_id>
+    <SQlQuery_data>
+      INSERT INTO USER_INFORMATION
+      (
+      ACTFLG,
+      CTDUSR,
+      CTDWKS,
+      CTDPGM,
+      CTD_DT,
+      MDFUSR,
+      MDFWKS,
+      MDFPGM,
+      LSTMDF,
+      USER_NAME,
+      DEPARTMENT_ID,
+      EMAIL,
+      FULL_NAME,
+      USER_POINT,
+      PASSWORD)
+      VALUES(
+      @AcceptFlag,
+      @UserName,
+      @CreatedMachine,
+      @CreatedProgram,
+      GETDATE(),
+      0,
+      '-',
+      '-',
+      GETDATE(),
+      @UserName,
+      0,
+      @Email,
+      @FullName,
+      0,
+      @Password
+      )
+    </SQlQuery_data>
+  </SQLQuery>
 </Table>

@@ -1,6 +1,7 @@
 ﻿@Code
-        Layout = "~/Views/Shared/_layout.vbhtml"
-        ViewBag.Title = "Home"
+    Layout = "~/Views/Shared/_layout.vbhtml"
+    ViewBag.Title = "Home"
+  
 End Code
 <!DOCTYPE html>
 <html>

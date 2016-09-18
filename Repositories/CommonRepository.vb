@@ -67,7 +67,7 @@ Public Class CommonRepository
             Dim puserId As SqlParameter
             puserId = New SqlParameter()
             puserId.Direction = ParameterDirection.Input
-            puserId.SqlDbType = SqlDbType.Int
+            puserId.SqlDbType = SqlDbType.BigInt
             puserId.ParameterName = Parameters.CmdParameters.UserId
             puserId.Value = userId
             cmd.Parameters.Add(puserId)
@@ -105,49 +105,49 @@ Public Class CommonRepository
     End Sub
 
     Public Sub LogUserLogOut(userId As ULong, session As String, computerName As String, ipAdress As String) Implements ICommonRepository.LogUserLogOut
-        '    Dim common As New Commons()
-        '    Dim xmlReader As New XMLQueryReader
-        '    Try
-        '        Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.InputParameters.CMN004, Constants.CommonFile)
+        Dim common As New Commons()
+        Dim xmlReader As New XMLQueryReader
+        Try
+            Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.Common.CMN_002, Constants.CommonFile)
 
-        '        Dim cmd As SqlCommand = New SqlCommand()
-        '        cmd.Connection = _conn
-        '        cmd.CommandText = sqlQuery
-        '        cmd.CommandType = CommandType.Text
-        '        If _conn.State = ConnectionState.Closed Then
-        '            _conn.Open()
-        '        End If
+            Dim cmd As SqlCommand = New SqlCommand()
+            cmd.Connection = _conn
+            cmd.CommandText = sqlQuery
+            cmd.CommandType = CommandType.Text
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
+            End If
 
-        '        Dim puserId As SqlParameter
-        '        puserId = New SqlParameter()
-        '        puserId.Direction = ParameterDirection.Input
-        '        puserId.SqlDbType = SqlDbType.Int
-        '        puserId.ParameterName = Parameters.CmdParameters.UserId
-        '        puserId.Value = userId
-        '        cmd.Parameters.Add(puserId)
+            Dim puserId As SqlParameter
+            puserId = New SqlParameter()
+            puserId.Direction = ParameterDirection.Input
+            puserId.SqlDbType = SqlDbType.Int
+            puserId.ParameterName = Parameters.CmdParameters.UserId
+            puserId.Value = userId
+            cmd.Parameters.Add(puserId)
 
-        '        Dim pSession As SqlParameter
-        '        pSession = New SqlParameter()
-        '        pSession.Direction = ParameterDirection.Input
-        '        pSession.SqlDbType = SqlDbType.NChar
-        '        pSession.ParameterName = Parameters.CmdParameters.SessionId
-        '        pSession.Value = session
-        '        cmd.Parameters.Add(pSession)
+            Dim pSession As SqlParameter
+            pSession = New SqlParameter()
+            pSession.Direction = ParameterDirection.Input
+            pSession.SqlDbType = SqlDbType.NChar
+            pSession.ParameterName = Parameters.CmdParameters.SessionId
+            pSession.Value = session
+            cmd.Parameters.Add(pSession)
 
-        '        Dim pPcIP As SqlParameter
-        '        pPcIP = New SqlParameter()
-        '        pPcIP.Direction = ParameterDirection.Input
-        '        pPcIP.SqlDbType = SqlDbType.NChar
-        '        pPcIP.ParameterName = Parameters.CmdParameters.PcIp
-        '        pPcIP.Value = ipAdress
-        '        cmd.Parameters.Add(pPcIP)
+            Dim pPcIP As SqlParameter
+            pPcIP = New SqlParameter()
+            pPcIP.Direction = ParameterDirection.Input
+            pPcIP.SqlDbType = SqlDbType.NChar
+            pPcIP.ParameterName = Parameters.CmdParameters.PcIp
+            pPcIP.Value = ipAdress
+            cmd.Parameters.Add(pPcIP)
 
-        '        cmd.ExecuteNonQuery()
-        '    Catch ex As Exception
-        '        Throw ex
-        '    Finally
-        '        _conn.Close()
-        '    End Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw ex
+        Finally
+            _conn.Close()
+        End Try
     End Sub
         ''' <summary>
     ''' Ghi thông tin người dùng đăng xuất khỏi hệ thống khi có sự cố

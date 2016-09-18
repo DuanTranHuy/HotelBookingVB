@@ -8,6 +8,7 @@ Public Class LoginRepository
     Public Class Parameters
         Public Class Login
             Public Const UserName As String = "@userName"
+            Public Const Email As String = "@Email"
         End Class
     End Class
     Public Function Login(ByVal userName As String) As Login Implements ILoginRepository.Login
@@ -56,5 +57,72 @@ Public Class LoginRepository
             _conn.Close()
         End Try
         Return user
+    End Function
+    Public Function CheckExistEmail(ByVal email As String) As Integer Implements ILoginRepository.CheckExistEmail
+        Dim count As Integer
+        Dim xmlReader As New XMLQueryReader
+        Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.Login.Login_02, Constants.Login.Login)
+        Dim sqlCommand As SqlCommand = New SqlCommand()
+        Dim dr As SqlDataReader = Nothing
+        Try
+            sqlCommand.Connection = _conn
+            sqlCommand.CommandText = sqlQuery
+            sqlCommand.CommandType = CommandType.Text
+
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
+            End If
+
+            Dim pEmail As SqlParameter
+            pEmail = New SqlParameter()
+            pEmail.Direction = ParameterDirection.Input
+            pEmail.SqlDbType = SqlDbType.VarChar
+            pEmail.ParameterName = Parameters.Login.Email
+            pEmail.Value = email
+            sqlCommand.Parameters.Add(pEmail)
+
+            count = sqlCommand.ExecuteScalar()
+
+
+        Catch ex As Exception
+            _conn.Close()
+            Throw ex
+
+
+        End Try
+        Return count
+    End Function
+        Public Function CheckExistAccount(ByVal userName As String) As Integer Implements ILoginRepository.CheckExistAccount
+        Dim xmlReader As New XMLQueryReader
+        Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.Login.Login_03, Constants.Login.Login)
+        Dim cmd As SqlCommand = New SqlCommand()
+        Dim count As Integer
+        Try
+            cmd.Connection = _conn
+            cmd.CommandText = sqlQuery
+            cmd.CommandType = CommandType.Text
+
+            If _conn.State = ConnectionState.Closed Then
+                _conn.Open()
+            End If
+
+            Dim pUsername As SqlParameter
+            pUsername = New SqlParameter()
+            pUsername.Direction = ParameterDirection.Input
+            pUsername.SqlDbType = SqlDbType.VarChar
+            pUsername.ParameterName = Parameters.Login.UserName
+            pUsername.Value = userName
+            cmd.Parameters.Add(pUsername)
+
+            count = cmd.ExecuteScalar()
+
+
+        Catch ex As Exception
+            _conn.Close()
+            Throw ex
+
+
+        End Try
+        Return count
     End Function
 End Class

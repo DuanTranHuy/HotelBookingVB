@@ -8,4 +8,20 @@
       WHERE USER_NAME=@userName
     </SQlQuery_data>
   </SQLQuery>
+  <SQLQuery>
+    <SQlQuery_id>Login_02</SQlQuery_id>
+    <SQlQuery_data>
+      SELECT COUNT(EMAIL) AS EMAIL_COUNT
+      FROM USER_INFORMATION
+      WHERE EMAIL = @email
+    </SQlQuery_data>
+  </SQLQuery>
+  <SQLQuery>
+    <SQlQuery_id>Login_03</SQlQuery_id>
+    <SQlQuery_data>
+      SELECT COUNT(USER_NAME) AS USER_COUNT
+      FROM USER_INFORMATION
+      WHERE USER_NAME = @userName
+    </SQlQuery_data>
+  </SQLQuery>
 </Table>

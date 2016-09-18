@@ -3,6 +3,7 @@
 @Code
     ViewBag.Title = "Login"
     Dim loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes()
+    Dim check As String = ViewBag.error
 End Code
 
 <!DOCTYPE html>
@@ -47,10 +48,15 @@ End Code
         <!-- Login Wrap  -->
         <div Class="login-wrap">
             <img src = "images/logo.png" Class="login-img" alt="logo" /><br />
+
             <div Class="login-c1">
                 <div Class="cpadding50">
                     <input type = "text" Class="form-control logpadding" id="txtUsername" placeholder="Username">
-                    <Label id = "lbl_username_fail" Class="label-error"></label>
+                    <Label id = "lbl_username_fail" Class="label-error" ></label>
+                    @If TempData("Message") IsNot Nothing Then
+                    @<p id = "errorMessage" Class="label-error">Email này đã đăng kí</p>
+                    End IF
+
                     <br />
                     <input type = "text" Class="form-control logpadding" id="txtPassword" placeholder="Password">
                     <Label id = "lbl_password_fail" Class="label-error"></label>
@@ -65,10 +71,10 @@ End Code
                         </div>
 
                         <div id = "fb-root" ></div>
-                                    <div Class="alignbottom2">
+                    <div Class="alignbottom2">
                             <div Class="checkbox">
                                 <Label>
-                                            <input type = "checkbox" > Remember
+                            <input type = "checkbox" > Remember
                                 </label>
                             </div>
                             <div Class="fb-login-button" data-max-rows="4" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
