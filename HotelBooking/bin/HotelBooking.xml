@@ -187,17 +187,17 @@ HotelBooking
  <param name="RemoveSessionLogOut">Tham số khi xóa các session đăng xuất hệ thống</param>
  <remarks></remarks>
 </member>
-<member name="M:HotelBooking.Controllers.SignUpController.SignUp(System.String,System.String,System.String,System.String,System.String)">
+<member name="M:HotelBooking.Controllers.LoginController.Login(System.String,System.String)">
  <remarks></remarks>
 </member>
-<member name="M:HotelBooking.LoginController.Login(System.String,System.String)">
- <remarks></remarks>
-</member>
-<member name="M:HotelBooking.LoginController.LogOut">
+<member name="M:HotelBooking.Controllers.LoginController.LogOut">
  <summary>
  Log out
  </summary>
  <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Controllers.SignUpController.SignUp(System.String,System.String,System.String,System.String,System.String)">
  <remarks></remarks>
 </member>
 <member name="T:HotelBooking.My.Resources.Resources">
