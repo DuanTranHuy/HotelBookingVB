@@ -94,7 +94,11 @@ Namespace Controllers
                     Session.Add(ConstantsForCommon.SessionParam.SessionUserId, user.Id)
                     Session.Add(ConstantsForCommon.SessionParam.SessionUserName, username)
                     Session.Add(ConstantsForCommon.SessionParam.SessionUserPass, password)
-                    Session.Add(ConstantsForCommon.SessionParam.SessionFullName, user.FullName)
+                    If user.FullName Is Nothing Then
+                        Session.Add(ConstantsForCommon.SessionParam.SessionFullName, username)
+                    Else
+                        Session.Add(ConstantsForCommon.SessionParam.SessionFullName, user.FullName)
+                    End If
                     Session.Add(ConstantsForCommon.SessionParam.SessionId, sessionId)
                 End If
 
