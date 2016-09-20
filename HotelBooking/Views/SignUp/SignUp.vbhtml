@@ -10,6 +10,10 @@ End Code
     <title>Đăng kí</title>
     <link href="~/Content/HBThemes/dist/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="~/Content/HBThemes/assets/css/custom.css" rel="stylesheet" media="screen">
+    <link href="~/Content/HBThemes/font-awesome/css/bootstrap-social.css" rel="stylesheet" media="screen">
+    <link href="~/Content/HBThemes/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
+    <link href="~/Content/HBThemes/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/HBThemes/font-awesome/css/social-buttons.css" rel="stylesheet" media="screen">
 
     <link src="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" />
     <link src="~/Content/HBThemes/css/app/app.css" rel="stylesheet" />
@@ -74,9 +78,13 @@ End Code
                     @Html.AntiForgeryToken()
                     @<div Class="form-group">
                         <Label style="color: lavender"> Hoặc đăng kí nhanh với</Label>             
-                        <p>
-                            <button type="submit" class="social3b" id="Facebook" name="provider" value="Facebook"><img src="~/Content/HBThemes/images/facebook.png" alt="" /></button>
-                            <button type="submit" class="social3b" id="Google" name="provider" value="Google"><img src="~/Content/HBThemes/images/google-plus.png" alt="" /></button>
+                        <p class="center">
+                            <Button type="submit" id="Facebook" Class="btn btn-social btn-facebook" name="provider" value="Facebook">
+                                <span Class="fa fa-facebook"></span> Facebook
+                            </Button>
+                            <Button type="submit" id="Google" Class="btn btn-social btn-google-plus" name="provider" value="Google">
+                                <span Class="fa fa-google-plus"></span> Google
+                            </Button>
                         </p>
                          @If TempData("Message") IsNot Nothing Then
                              @<p id="errorMessage" Class="label-error">Email này đã đăng kí</p>

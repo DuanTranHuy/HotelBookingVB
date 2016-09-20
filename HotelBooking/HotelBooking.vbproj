@@ -646,6 +646,12 @@
     <Content Include="Content\HBThemes\examples\sticky-footer\sticky-footer.css" />
     <Content Include="Content\HBThemes\examples\theme\index.html" />
     <Content Include="Content\HBThemes\examples\theme\theme.css" />
+    <Content Include="Content\HBThemes\font-awesome\css\bootstrap-social.css" />
+    <Content Include="Content\HBThemes\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\HBThemes\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\HBThemes\font-awesome\css\social-buttons.css" />
+    <Content Include="Content\HBThemes\font-awesome\font-awesome-4.6.3\css\font-awesome.css" />
+    <Content Include="Content\HBThemes\font-awesome\font-awesome-4.6.3\css\font-awesome.min.css" />
     <Content Include="Content\HBThemes\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\HBThemes\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\HBThemes\fonts\fontawesome-webfont.ttf" />
