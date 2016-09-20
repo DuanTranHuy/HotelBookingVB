@@ -5,11 +5,18 @@
     Public Const RegexUpperCase As String = "[A-Z]"
     Public Const RegexNumericInput As String = "[0-9]"
     Public Const Minus As String = "-"
+    Public Const EmptyString As String = ""
+      Public Const Message As String = "Message"
     Public Const RemoteHost As String = "REMOTE_HOST"
     Public Const HttpXForward As String = "HTTP_X_FORWARDED_FOR"
     Public Const RemoteAddr As String = "REMOTE_ADDR"
     Public Const WelcomeMessage As String = "WELCOME"
     Public Const RegexEmail As String = "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$"
+    Public Const FacebookAccessToken As String = "FacebookAccessToken"
+    Public Const GoogleAccessToken As String = "GoogleAccessToken"
+    Public  Const XsrfId As String = "XsrfId"
+    Public  Const Identity As String = "Bearer"
+
     Public Class CommonsTitleName
 
         Public Const Login As String = "SYS010 - Login"
@@ -52,9 +59,14 @@
     Public Class LogParam
         Public Const Logout As String = "Logout"
         Public Const Login As String = "Login"
+        Public Const ExternalLoginCallback As String = "ExternalLoginCallback"
     End Class
     Public Class HomeParam
         Public Const Home As String = "Home"
+    End Class
+
+        Public Class SignUpParam
+        Public Const ExternalLoginCallback As String = "ExternalLoginCallback"
     End Class
 
     Public Class SessionParam

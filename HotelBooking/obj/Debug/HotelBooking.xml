@@ -181,7 +181,14 @@ HotelBooking
  <remarks></remarks>
 </member>
 <member name="M:HotelBooking.Controllers.LoginController.Login(System.String,System.String)">
- <remarks></remarks>
+ <summary>
+ Hàm Login và gán session cho hệ thống
+ </summary>
+ <param name="username"></param>
+ <param name="password"></param>
+ <returns></returns>
+ Đây là giao thức http post gọi function bên view thì nó sẽ vào đây vớ action name là Login
+ bắt buộc phải có hoặc function gọi đến function này phải có giao thức post nếu trả ra view
 </member>
 <member name="M:HotelBooking.Controllers.LoginController.LogOut">
  <summary>
@@ -191,6 +198,13 @@ HotelBooking
  <remarks></remarks>
 </member>
 <member name="M:HotelBooking.Controllers.SignUpController.SignUp(System.String,System.String,System.String,System.String,System.String)">
+ <remarks></remarks>
+</member>
+<member name="M:HotelBooking.Controllers.SignUpController.LogOut">
+ <summary>
+ Log out
+ </summary>
+ <returns></returns>
  <remarks></remarks>
 </member>
 <member name="T:HotelBooking.My.Resources.Resources">

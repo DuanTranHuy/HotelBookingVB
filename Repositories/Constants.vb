@@ -58,6 +58,7 @@
 
         Public Const DateTimeFormatForDisplay = "dd/MM/yyyy HH:mm"
         Public Class Common
+            Public Const CMN_003 As String = "CMN_003"
             Public Const CMN_002 As String = "CMN_002"
             Public Const CMN_001 As String = "CMN_001"
             Public Const COMMON As String = "COMMON"

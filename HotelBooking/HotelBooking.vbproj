@@ -242,6 +242,7 @@
     <Compile Include="Controllers\LoginController.vb" />
     <Compile Include="Controllers\ManageController.vb" />
     <Compile Include="Controllers\SignUpController.vb" />
+    <Compile Include="Controllers\UserProfileController.vb" />
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1461,13 +1462,12 @@
     <Content Include="Views\Manage\ManageLogins.vbhtml" />
     <Content Include="Views\Manage\SetPassword.vbhtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.vbhtml" />
-    <Content Include="Views\Shared\Lockout.vbhtml" />
-    <Content Include="Views\Shared\_LoginPartial.vbhtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Home\Home.vbhtml" />
     <Content Include="Views\Login\Login.vbhtml" />
     <Content Include="Views\SignUp\SignUp.vbhtml" />
     <Content Include="Views\ErrorScreen\ErrorScreen.vbhtml" />
+    <Content Include="Views\UserProfile\UserProfile.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
@@ -1504,7 +1504,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\HBThemes\js\vendor\maps\google\jquery-ui-map\ui\min\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

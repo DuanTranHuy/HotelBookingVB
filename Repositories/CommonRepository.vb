@@ -9,33 +9,10 @@ Public Class CommonRepository
         Private Class Parameters
         Public Class CmdParameters
             Public Const UserId As String = "@userId"
-            Public Const UserName As String = ":userName"
-            Public Const Password As String = ":password"
             Public Const SessionId As String = "@sessionId"
-            Public Const FunctionCode As String = ":functionCode"
             Public Const PcName As String = "@pcName"
             Public Const PcIp As String = "@pcIp"
-            Public Const ActCode As String = ":actcode"
-            Public Const ScreenCode As String = ":screenCode"
-            Public Const ScreenName As String = ":screenName"
-            Public Const CtdUsr As String = ":ctdUsr"
-            Public Const CtdWks As String = ":ctdWks"
-            Public Const CtdPgm As String = ":ctdPgm"
-            Public Const Act As String = ":act"
-            Public Const SqlString As String = ":sql"
-            Public Const Operation As String = ":operation"
-            Public Const Key As String = ":key"
-            Public Const Author As String = ":operator"
-            Public Const Reason As String = ":reason"
-            Public Const RecordId As String = ":recordId"
-            Public Const errorHeadId As String = ":errorHeadId"
-            Public Const oldStatus As String = ":oldStatus"
-            Public Const newStatus As String = ":newStatus"
-        End Class
-
-        Public Class OutPutParameter
-            Public Const AcceptFlg = "1"
-            Public Const NotAcceptFlg = "0"
+ 
         End Class
     End Class
     Public Sub LogSpecialOperation(operation As String, key As String, author As String, reason As String) Implements ICommonRepository.LogSpecialOperation
@@ -158,21 +135,10 @@ Public Class CommonRepository
     ''' <param name="ipAdress">IP máy trạm</param>
     ''' <remarks></remarks>
     Public Sub LogUserLogoutOnSessionEnd(userId As ULong, session As String, ByVal computerName As String, ByVal ipAdress As String)
+        Dim xmlReader As New XMLQueryReader
         Try
             ' Can not use HttpContext.Current.MapPath because HttpContex.Current is null
-            Dim sqlQuery As String = _
-            "UPDATE SESSION_LOGIN_LOGOUT " & _
-            "SET " & _
-            "MDFUSR = @userId, " & _
-            "MDFWKS = @pcIp, " & _
-            "MDFPGM = 'Logout', " & _
-            "LSTMDF = GETDATE(), " & _
-            "LOGOUT_DT = GETDATE(), " & _
-            "IS_ONLINE = '0' " & _
-            "WHERE " & _
-            "USER_ID = @userId AND " & _
-            "SESSION_ID = @sessionId AND " & _
-            "IS_ONLINE = '1'"
+            Dim sqlQuery As String = xmlReader.GetSqlQuery(Constants.Common.CMN_003, Constants.CommonFile)
 
             Dim cmd As SqlCommand = New SqlCommand()
             cmd.Connection = _conn

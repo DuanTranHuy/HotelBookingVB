@@ -11,7 +11,7 @@ End Code
     <link href="~/Content/HBThemes/dist/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="~/Content/HBThemes/assets/css/custom.css" rel="stylesheet" media="screen">
 
-    <link src="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" /> 
+    <link src="~/Content/HBThemes/css/vendor/all.css" rel="stylesheet" />
     <link src="~/Content/HBThemes/css/app/app.css" rel="stylesheet" />
     <script src="~/Content/HBThemes/assets/js/jquery.v2.0.3.js"></script>
     <style>
@@ -23,62 +23,72 @@ End Code
 </head>
 <body>
 
-        <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
-                        <div class="text-center" style="margin-top: 1cm">
-                            <img src="~/Content/HBThemes/images/logo2.png" class="login-img" alt="logo" /><br />
-                        </div>
-                        <h1 class="text-display-1 text-center" style="color: lavender">Tạo tài khoản</h1>
-                        <!-- Signup -->
-                        <div class="form-group">
-                            <div class="form-control-material">
-                                <input id="txtUserName" type="text" class="form-control input-tp" placeholder="Tên đăng nhập">
-                            </div>
-                            <label id="lblUserNameFail" class="label-error"></label>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control-material">
-                                <input id="txtEmail" type="text" class="form-control input-tp" placeholder="Địa chỉ Email">
-                            </div>
-                            <label id="lblEmailFail" class="label-error"></label>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control-material">
-                                <input id="txtConfirmEmail" type="text" class="form-control input-tp" placeholder="Nhập lại địa chỉ Email">
-                            </div>
-                            <label id="lblConfirmEmailFail" class="label-error"></label>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control-material">
-                                <input id="txtPassword" type="password" class="form-control input-tp" placeholder="Mật khẩu">
-                            </div>
-                            <label id="lblPasswordFail" class="label-error"></label>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control-material">
-                                <input id="txtConfirmPassword" type="password" class="form-control input-tp" placeholder="Nhập lại mật khẩu">
-                            </div>
-                            <label id="lblConfirmPasswordFail" class="label-error"></label>
-                        </div>
-                        <div class="form-group">
-                            <div class="text-center">
-                                <label style="color: darkgray; font-size: 11.5px">* Chọn đăng ký là bạn đã đồng ý với các <a style="color: indianred" href="#">Điều khoản dịch vụ</a> của chúng tôi.</label>
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary" type="submit" id="btnSignUp" style="width:300px">Đăng kí ngay</button>
-                        </div>
-                        <br />
-                        <div class="form-group">
-                            <label style="color: lavender">Hoặc đăng kí nhanh với</label>
-                            <a href="#" class="social1b"><img src="~/Content/HBThemes/images/facebook.png" alt="" /></a>
-                            <a href="#" class="social3b"><img src="~/Content/HBThemes/images/google-plus.png" alt="" /></a>
-                        </div>
-                        <!-- End Signup -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="text-center" style="margin-top: 1cm">
+                    <img src="~/Content/HBThemes/images/logo2.png" class="login-img" alt="logo" /><br />
+                </div>
+                <h1 class="text-display-1 text-center" style="color: lavender">Tạo tài khoản</h1>
+                <!-- Signup -->
+                <div class="form-group">
+                    <div class="form-control-material">
+                        <input id="txtUserName" type="text" class="form-control input-tp" placeholder="Tên đăng nhập">
+                    </div>
+                    <label id="lblUserNameFail" class="label-error"></label>
+                </div>
+                <div class="form-group">
+                    <div class="form-control-material">
+                        <input id="txtEmail" type="text" class="form-control input-tp" placeholder="Địa chỉ Email">
+                    </div>
+                    <label id="lblEmailFail" class="label-error"></label>
+                </div>
+                <div class="form-group">
+                    <div class="form-control-material">
+                        <input id="txtConfirmEmail" type="text" class="form-control input-tp" placeholder="Nhập lại địa chỉ Email">
+                    </div>
+                    <label id="lblConfirmEmailFail" class="label-error"></label>
+                </div>
+                <div class="form-group">
+                    <div class="form-control-material">
+                        <input id="txtPassword" type="password" class="form-control input-tp" placeholder="Mật khẩu">
+                    </div>
+                    <label id="lblPasswordFail" class="label-error"></label>
+                </div>
+                <div class="form-group">
+                    <div class="form-control-material">
+                        <input id="txtConfirmPassword" type="password" class="form-control input-tp" placeholder="Nhập lại mật khẩu">
+                    </div>
+                    <label id="lblConfirmPasswordFail" class="label-error"></label>
+                </div>
+                <div class="form-group">
+                    <div class="text-center">
+                        <label style="color: darkgray; font-size: 11.5px">* Chọn đăng ký là bạn đã đồng ý với các <a style="color: indianred" href="#">Điều khoản dịch vụ</a> của chúng tôi.</label>
                     </div>
                 </div>
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit" id="btnSignUp" style="width:300px">Đăng kí ngay</button>
+                </div>
+                <br />
+                @Using Html.BeginForm("ExternalLogin", "SignUp", New With {.provider = "Facebook", .ReturnUrl = "/"}, FormMethod.Post, New With {.class = "form-horizontal", .role = "form"})
+                    @Html.AntiForgeryToken()
+                    @<div Class="form-group">
+                        <Label style="color: lavender"> Hoặc đăng kí nhanh với</Label>             
+                        <p>
+                            <button type="submit" class="social3b" id="Facebook" name="provider" value="Facebook"><img src="~/Content/HBThemes/images/facebook.png" alt="" /></button>
+                            <button type="submit" class="social3b" id="Google" name="provider" value="Google"><img src="~/Content/HBThemes/images/google-plus.png" alt="" /></button>
+                        </p>
+                         @If TempData("Message") IsNot Nothing Then
+                             @<p id="errorMessage" Class="label-error">Email này đã đăng kí</p>
+                         End IF
+
+                    </div>
+                End Using
+
+                <!-- End Signup -->
             </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -166,7 +176,7 @@ End Code
                 $('#txtEmail').focus();
                 return false;
             }
-            else if (!isValidEmailAddress(email)){
+            else if (!isValidEmailAddress(email)) {
                 $('#lblEmailFail').text("Địa chỉ Email không đúng định dạng");
                 $('#txtEmail').focus();
                 return false;

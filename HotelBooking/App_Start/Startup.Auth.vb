@@ -62,8 +62,9 @@ Partial Public Class Startup
                                    Return Task.FromResult(0)
                                End Function
         }
-
         app.UseFacebookAuthentication(facebookOptions)
+
+
         Dim googleOptions = New GoogleOAuth2AuthenticationOptions()
         googleOptions.ClientId = "794245959861-1qi3r089uiigbdl0a2kcao5b40t7246u.apps.googleusercontent.com"
         googleOptions.ClientSecret = "Ck9xvA0FeW5GFE57pkC2allJ"

@@ -70,6 +70,7 @@
     <Compile Include="ILoginRepository.vb" />
     <Compile Include="IRepository.vb" />
     <Compile Include="ISignUpRepository.vb" />
+    <Compile Include="IUserProfile.vb" />
     <Compile Include="LoginRepository.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -87,6 +88,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SignUpRepository.vb" />
+    <Compile Include="UserProfileRepository.vb" />
     <Compile Include="XMLQueryReader.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +125,7 @@
     <Content Include="Queries\Home.xml" />
     <Content Include="Queries\Login.xml" />
     <Content Include="Queries\SignUp.xml" />
+    <Content Include="Queries\UserProfile.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

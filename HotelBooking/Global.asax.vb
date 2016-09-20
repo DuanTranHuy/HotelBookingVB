@@ -10,7 +10,7 @@ Public Class MvcApplication
         BundleConfig.RegisterBundles(BundleTable.Bundles)
     End Sub
         Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)
-        If Not IsNothing(Session) And Not IsNothing(ConstantsForCommon.SessionParam.SessionUserId) Then
+        If Not IsNothing(Session) And Not IsNothing(ConstantsForCommon.SessionParam.SessionUserId) And Not IsNothing(ConstantsForCommon.SessionParam.SessionId) Then
             Logger.LogUserLogoutOnSessionEnd(Session(ConstantsForCommon.SessionParam.SessionUserId), Session(ConstantsForCommon.SessionParam.SessionId), "-", "-")
             Session.Remove(ConstantsForCommon.SessionParam.SessionUserId)
             Session.Remove(ConstantsForCommon.SessionParam.SessionUserName)
