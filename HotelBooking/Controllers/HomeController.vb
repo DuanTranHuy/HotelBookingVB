@@ -1,8 +1,10 @@
-﻿Public Class HomeController
-    Inherits System.Web.Mvc.Controller
+﻿Namespace Controllers
+    Public Class HomeController
+        Inherits System.Web.Mvc.Controller
 
-    Function Home() As ActionResult
-        Return View()
-    End Function
+        Function Home() As ActionResult
+            Return View()
+        End Function
 
-End Class
+    End Class
+End NameSpace
